@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Precision Tech Insights</title>
+    <meta name="description" content="Get in touch with Precision Tech Insights. Contact us for web development, cybersecurity, data science, AI automation, and content creation services.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#0f172a',
+                        accent: '#3b82f6'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-left': 'slideLeft 0.8s ease-out',
+                        'slide-right': 'slideRight 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'bounce-slow': 'bounce 2s infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-secondary/95 backdrop-blur-md text-white fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="/company_logo.png" alt="Precision Tech Insights" class="w-10 h-10 rounded-full">
+                    <div class="text-xl font-bold">
+                        <span class="gradient-text">Precision Tech Insights</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="hover:text-accent transition-colors">Home</a>
+                    <a href="/services" class="hover:text-accent transition-colors">Services</a>
+                    <a href="/about" class="hover:text-accent transition-colors">About</a>
+                    <a href="/contact" class="text-accent font-semibold transition-colors">Contact</a>
+                    <a href="/whats-next" class="hover:text-accent transition-colors">What's Next</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6 gradient-text animate-fade-in">Get In Touch</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
+                Ready to start your next project? Let's discuss your needs and create something amazing together.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="animate-slide-left">
+                        <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                            <h2 class="text-3xl font-bold mb-6 text-primary animate-fade-in">Send us a message</h2>
+                            <form id="contactForm" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="animate-slide-up">
+                                        <label class="block text-sm font-medium mb-2 text-gray-700">Full Name *</label>
+                                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:border-accent">
+                                    </div>
+                                    <div class="animate-slide-up">
+                                        <label class="block text-sm font-medium mb-2 text-gray-700">Email Address *</label>
+                                        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:border-accent">
+                                    </div>
+                                </div>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="animate-slide-up">
+                                        <label class="block text-sm font-medium mb-2 text-gray-700">Phone Number</label>
+                                        <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:border-accent">
+                                    </div>
+                                    <div class="animate-slide-up">
+                                        <label class="block text-sm font-medium mb-2 text-gray-700">Company</label>
+                                        <input type="text" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:border-accent">
+                                    </div>
+                                </div>
+                                
+                                <div class="animate-slide-up">
+                                    <label class="block text-sm font-medium mb-2 text-gray-700">Service Interested In *</label>
+                                    <select name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:border-accent">
+                                        <option value="">Select a service</option>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Cybersecurity">Cybersecurity</option>
+                                        <option value="Data Science">Data Science</option>
+                                        <option value="AI & Automation">AI & Automation</option>
+                                        <option value="Content Creation">Content Creation</option>
+                                        <option value="Multiple Services">Multiple Services</option>
+                                        <option value="Consultation">Consultation</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="animate-slide-up">
+                                    <label class="block text-sm font-medium mb-2 text-gray-700">Project Budget</label>
+                                    <select name="budget" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:border-accent">
+                                        <option value="">Select budget range</option>
+                                        <option value="Under $5,000">Under $5,000</option>
+                                        <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+                                        <option value="$15,000 - $50,000">$15,000 - $50,000</option>
+                                        <option value="$50,000+">$50,000+</option>
+                                        <option value="Discuss">Let's Discuss</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="animate-slide-up">
+                                    <label class="block text-sm font-medium mb-2 text-gray-700">Project Timeline</label>
+                                    <select name="timeline" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:border-accent">
+                                        <option value="">Select timeline</option>
+                                        <option value="ASAP">ASAP</option>
+                                        <option value="Within 1 month">Within 1 month</option>
+                                        <option value="1-3 months">1-3 months</option>
+                                        <option value="3-6 months">3-6 months</option>
+                                        <option value="6+ months">6+ months</option>
+                                        <option value="Flexible">Flexible</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="animate-slide-up">
+                                    <label class="block text-sm font-medium mb-2 text-gray-700">Project Details *</label>
+                                    <textarea name="message" rows="5" required placeholder="Tell us about your project, goals, and any specific requirements..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 resize-none hover:border-accent"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg animate-scale-in">
+                                    Send Message
+                                </button>
+                            </form>
+                            
+                            <div id="formMessage" class="mt-4 p-4 rounded-lg hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="animate-slide-right">
+                        <div class="space-y-8">
+                            <div class="animate-fade-in">
+                                <h2 class="text-3xl font-bold mb-6 text-primary">Connect With Us</h2>
+                                <p class="text-lg text-gray-600 mb-8">
+                                    We're here to help bring your vision to life. Reach out through any of these channels, and we'll get back to you within 24 hours.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start space-x-4 p-4 bg-blue-50 rounded-lg animate-slide-up hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 animate-bounce-slow">
+                                        <span class="text-xl text-white">📧</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-lg">Email</p>
+                                        <p class="text-gray-600">contact@precisiontechinsights.com</p>
+                                        <p class="text-sm text-gray-500 mt-1">We respond within 24 hours</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4 p-4 bg-green-50 rounded-lg animate-slide-up hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                                    <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0 animate-bounce-slow">
+                                        <span class="text-xl text-white">📱</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-lg">WhatsApp</p>
+                                        <p class="text-gray-600">+92 348 1383350</p>
+                                        <p class="text-sm text-gray-500 mt-1">Available 9 AM - 6 PM PKT</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4 p-4 bg-blue-50 rounded-lg animate-slide-up hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 animate-bounce-slow">
+                                        <span class="text-xl text-white">💼</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-lg">LinkedIn</p>
+                                        <a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="text-accent hover:text-blue-700 transition-colors">Company Profile</a>
+                                        <p class="text-sm text-gray-500 mt-1">Connect with us professionally</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg animate-slide-up hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                                    <div class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <span class="text-xl text-white">🌍</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-lg">Location</p>
+                                        <p class="text-gray-600">Pakistan</p>
+                                        <p class="text-sm text-gray-500 mt-1">Remote-first global operations</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Response Promise -->
+                            <div class="bg-gradient-to-br from-primary to-accent text-white p-6 rounded-xl animate-scale-in hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                                <h3 class="text-xl font-bold mb-3">⚡ Quick Response Promise</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li>• Initial response within 24 hours</li>
+                                    <li>• Free consultation call within 48 hours</li>
+                                    <li>• Detailed proposal within 3-5 business days</li>
+                                    <li>• Project kickoff within 1 week of approval</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 gradient-text">Frequently Asked Questions</h2>
+                    <p class="text-xl text-gray-600">Quick answers to common questions</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-3 text-primary">How do you handle project pricing?</h3>
+                        <p class="text-gray-600">We provide transparent, fixed-price quotes based on your specific requirements. No hidden fees, no surprises. We also offer flexible payment terms to accommodate your budget.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-3 text-primary">What's your typical project timeline?</h3>
+                        <p class="text-gray-600">Project timelines vary based on complexity. Simple websites: 2-4 weeks, complex applications: 2-6 months. We always provide realistic timelines and keep you updated throughout the process.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-3 text-primary">Do you work with international clients?</h3>
+                        <p class="text-gray-600">Absolutely! We work with clients worldwide. Our remote-first approach and flexible scheduling ensure smooth collaboration across different time zones.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-3 text-primary">What support do you provide after project completion?</h3>
+                        <p class="text-gray-600">We provide ongoing support and maintenance packages. This includes bug fixes, security updates, performance optimization, and feature enhancements as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-secondary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <p class="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                Don't wait—let's turn your ideas into reality. Get in touch today for a free consultation.
+            </p>
+            <a href="#contactForm" class="bg-accent hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Send Message Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/company_logo.png" alt="Precision Tech Insights" class="w-8 h-8 rounded-full">
+                        <h3 class="text-xl font-bold">Precision Tech Insights</h3>
+                    </div>
+                    <p class="text-gray-400">From Code to Intelligence — We Deliver Precision</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/services#web" class="hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="/services#security" class="hover:text-white transition-colors">Cybersecurity</a></li>
+                        <li><a href="/services#data" class="hover:text-white transition-colors">Data Science</a></li>
+                        <li><a href="/services#ai" class="hover:text-white transition-colors">AI & Automation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/whats-next" class="hover:text-white transition-colors">What's Next</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 contact@precisiontechinsights.com</li>
+                        <li>📱 +92 348 1383350</li>
+                        <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">💼 LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Precision Tech Insights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Contact form handling
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+                
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
+                        formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+                        formMessage.classList.remove('hidden');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    formMessage.className = 'mt-4 p-4 rounded-lg bg-red-100 text-red-800';
+                    formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+                    formMessage.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
