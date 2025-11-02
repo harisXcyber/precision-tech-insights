@@ -1,0 +1,15 @@
+name: Keep Render App Alive
+on:
+  schedule:
+    - cron: '*/14 * * * *'  # Every 14 minutes
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render App
+        run: |
+          echo "Pinging app to keep it alive..."
+          curl -f https://precision-tech-insights.onrender.com || echo "App might be starting up"
+          echo "Ping completed at $(date)"
