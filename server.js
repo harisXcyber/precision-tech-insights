@@ -14,7 +14,7 @@ app.use('/favicon.ico', express.static('favicon.ico'));
 app.use('/muhammad-haris.jpg', express.static('muhammad-haris.jpg'));
 
 // Email configuration
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: process.env.EMAIL_USER || 'contact@precisiontechinsights.com',
