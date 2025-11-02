@@ -19,7 +19,38 @@
                     animation: {
                         'fade-in': 'fadeIn 0.8s ease-in-out',
                         'slide-up': 'slideUp 0.6s ease-out',
-                        'bounce-slow': 'bounce 2s infinite'
+                        'slide-left': 'slideLeft 0.8s ease-out',
+                        'slide-right': 'slideRight 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'float': 'float 6s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        }
                     }
                 }
             }
@@ -71,51 +102,51 @@
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="animate-slide-up">
-                        <div class="text-4xl mb-6">💻</div>
+                    <div class="animate-slide-left">
+                        <div class="text-4xl mb-6 animate-float">💻</div>
                         <h2 class="text-4xl font-bold mb-6 text-primary">Web Development</h2>
-                        <p class="text-lg text-gray-600 mb-8">
+                        <p class="text-lg text-gray-600 mb-8 animate-fade-in">
                             Modern, scalable web solutions built with the latest technologies. From responsive websites to complex web applications, we deliver excellence in every line of code.
                         </p>
                         <div class="space-y-4 mb-8">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            <div class="flex items-center space-x-3 animate-slide-right hover:translate-x-2 transition-all duration-300">
+                                <div class="w-2 h-2 bg-accent rounded-full animate-pulse-slow"></div>
                                 <span>MERN Stack Development</span>
                             </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            <div class="flex items-center space-x-3 animate-slide-right hover:translate-x-2 transition-all duration-300">
+                                <div class="w-2 h-2 bg-accent rounded-full animate-pulse-slow"></div>
                                 <span>Django & Laravel Frameworks</span>
                             </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            <div class="flex items-center space-x-3 animate-slide-right hover:translate-x-2 transition-all duration-300">
+                                <div class="w-2 h-2 bg-accent rounded-full animate-pulse-slow"></div>
                                 <span>React & Next.js Applications</span>
                             </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            <div class="flex items-center space-x-3 animate-slide-right hover:translate-x-2 transition-all duration-300">
+                                <div class="w-2 h-2 bg-accent rounded-full animate-pulse-slow"></div>
                                 <span>Progressive Web Apps (PWA)</span>
                             </div>
                         </div>
-                        <a href="/contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        <a href="/contact" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-scale-in">
                             Start Your Project
                         </a>
                     </div>
-                    <div class="animate-fade-in">
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl">
+                    <div class="animate-slide-right">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                             <h3 class="text-2xl font-bold mb-4">Technologies We Use</h3>
                             <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105 animate-slide-up">
                                     <h4 class="font-semibold text-blue-600">Frontend</h4>
                                     <p class="text-sm text-gray-600">React, Vue.js, Angular, Tailwind CSS</p>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105 animate-slide-up">
                                     <h4 class="font-semibold text-green-600">Backend</h4>
                                     <p class="text-sm text-gray-600">Node.js, Python, PHP, Express</p>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105 animate-slide-up">
                                     <h4 class="font-semibold text-purple-600">Database</h4>
                                     <p class="text-sm text-gray-600">MongoDB, PostgreSQL, MySQL</p>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300 transform hover:scale-105 animate-slide-up">
                                     <h4 class="font-semibold text-orange-600">Cloud</h4>
                                     <p class="text-sm text-gray-600">AWS, Azure, Google Cloud</p>
                                 </div>
