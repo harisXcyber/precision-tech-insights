@@ -6,6 +6,17 @@ import nodemailer from 'nodemailer';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 
+// Add CORS headers
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    next();
+});
+
 app.use(express.json());
 app.use(express.static('dist'));
 app.use('/company_logo.png', express.static('company_logo.png'));
@@ -26,7 +37,19 @@ const transporter = nodemailer.createTransport({
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
+    console.log('=== Contact Form Submission Received ===');
+    console.log('Request body:', req.body);
+    
     const { name, email, phone, company, service, budget, timeline, message } = req.body;
+    
+    // Validate required fields
+    if (!name || !email || !service || !message) {
+        console.error('Missing required fields');
+        return res.status(400).json({ 
+            success: false, 
+            message: 'Missing required fields' 
+        });
+    }
     
     // Log the contact form submission
     console.log('New contact form submission:');
@@ -82,9 +105,11 @@ Submitted at: ${new Date().toLocaleString()}
             `
         });
         
+        console.log('✓ Email sent successfully');
         res.json({ success: true, message: 'Contact form submitted successfully' });
     } catch (error) {
-        console.error('Email sending failed:', error);
+        console.error('❌ Email sending failed:', error.message);
+        console.error('Error details:', error);
         // Still return success to user, but log the error
         res.json({ success: true, message: 'Contact form submitted successfully' });
     }
@@ -116,8 +141,18 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Server error:', err);
+    res.status(500).json({ 
+        success: false, 
+        message: 'Internal server error' 
+    });
+});
+
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
     console.log(`🚀 Precision Tech Insights website running on http://localhost:${PORT}`);
     console.log('📧 Contact form submissions will be emailed to muhammadharissahabb@gmail.com');
+    console.log('📍 API endpoint: /api/contact');
 });
