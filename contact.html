@@ -372,37 +372,56 @@
             const contactForm = document.getElementById('contactForm');
             const formMessage = document.getElementById('formMessage');
 
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
+            if (contactForm) {
+                console.log('Contact form found and initialized');
                 
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData.entries());
-                
-                try {
-                    const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(data)
-                    });
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    console.log('Form submitted');
                     
-                    const result = await response.json();
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
                     
-                    if (result.success) {
-                        formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
-                        formMessage.innerHTML = '<strong>✓ Successfully sent!</strong><br>Thank you for reaching out. We\'ll respond within 24 hours.<br><br>For immediate assistance, contact us on WhatsApp: <a href="https://wa.me/923481383350" target="_blank" class="font-semibold underline hover:text-green-900">+92 348 1383350</a>';
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData.entries());
+                    console.log('Form data:', data);
+                    
+                    try {
+                        const response = await fetch('/api/contact', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                        });
+                        
+                        console.log('Response status:', response.status);
+                        const result = await response.json();
+                        console.log('Response result:', result);
+                        
+                        if (result.success) {
+                            formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
+                            formMessage.innerHTML = '<strong>✓ Successfully sent!</strong><br>Thank you for reaching out. We\'ll respond within 24 hours.<br><br>For immediate assistance, contact us on WhatsApp: <a href="https://wa.me/923481383350" target="_blank" class="font-semibold underline hover:text-green-900">+92 348 1383350</a>';
+                            formMessage.classList.remove('hidden');
+                            contactForm.reset();
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        console.error('Form error:', error);
+                        formMessage.className = 'mt-4 p-4 rounded-lg bg-red-100 text-red-800';
+                        formMessage.innerHTML = 'Sorry, there was an error sending your message.<br><br>Please contact us directly on WhatsApp: <a href="https://wa.me/923481383350" target="_blank" class="font-semibold underline hover:text-red-900">+92 348 1383350</a>';
                         formMessage.classList.remove('hidden');
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Form submission failed');
+                    } finally {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
                     }
-                } catch (error) {
-                    formMessage.className = 'mt-4 p-4 rounded-lg bg-red-100 text-red-800';
-                    formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
-                    formMessage.classList.remove('hidden');
-                }
-            });
+                });
+            } else {
+                console.error('Contact form not found!');
+            }
         });
     </script>
 </body>
