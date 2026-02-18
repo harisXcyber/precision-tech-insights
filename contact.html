@@ -373,7 +373,11 @@
             const formMessage = document.getElementById('formMessage');
 
             if (contactForm) {
-                console.log('Contact form found and initialized');
+                console.log('✓ Contact form initialized successfully');
+                
+                // Add visual indicator that JS loaded
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.style.cursor = 'pointer';
                 
                 contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
