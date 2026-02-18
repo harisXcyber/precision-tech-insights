@@ -151,11 +151,11 @@
                                     <label class="block text-sm font-medium mb-2 text-gray-700">Project Budget</label>
                                     <select name="budget" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 hover:border-accent">
                                         <option value="">Select budget range</option>
-                                        <option value="Under $500">Under $500</option>
-                                        <option value="$500 - $1,500">$500 - $1,500</option>
-                                        <option value="$1,500 - $5,000">$1,500 - $5,000</option>
-                                        <option value="$5,000+">$5,000+</option>
-                                        <option value="Discuss">Let's Discuss</option>
+                                        <option value="Under $50">Under $50</option>
+                                        <option value="$50 - $150">$50 - $150</option>
+                                        <option value="$150 - $500">$150 - $500</option>
+                                        <option value="$500+">$500+</option>
+                                        <option value="Let's Discuss">Let's Discuss</option>
                                     </select>
                                 </div>
                                 
@@ -203,7 +203,7 @@
                                     </div>
                                     <div>
                                         <p class="font-semibold text-lg">Email</p>
-                                        <p class="text-gray-600">contact@precisiontechinsights.com</p>
+                                        <p class="text-gray-600">muhammadharissahabb@gmail.com</p>
                                         <p class="text-sm text-gray-500 mt-1">We respond within 24 hours</p>
                                     </div>
                                 </div>
@@ -337,7 +337,6 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Connect</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>📧 contact@precisiontechinsights.com</li>
                         <li>📱 +92 348 1383350</li>
                         <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">💼 LinkedIn</a></li>
                     </ul>
@@ -392,7 +391,7 @@
                     
                     if (result.success) {
                         formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
-                        formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+                        formMessage.innerHTML = '<strong>✓ Successfully sent!</strong><br>Thank you for reaching out. We\'ll respond within 24 hours.<br><br>For immediate assistance, contact us on WhatsApp: <a href="https://wa.me/923481383350" target="_blank" class="font-semibold underline hover:text-green-900">+92 348 1383350</a>';
                         formMessage.classList.remove('hidden');
                         contactForm.reset();
                     } else {

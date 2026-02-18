@@ -12,6 +12,8 @@ app.use('/company_logo.png', express.static('company_logo.png'));
 app.use('/favicon.png', express.static('favicon.png'));
 app.use('/favicon.ico', express.static('favicon.ico'));
 app.use('/muhammad-haris.jpg', express.static('muhammad-haris.jpg'));
+app.use('/home-profile.jpg', express.static('home-profile.jpg'));
+app.use('/about-profile.jpg', express.static('about-profile.jpg'));
 
 // Email configuration
 const transporter = nodemailer.createTransport({
