@@ -97,7 +97,19 @@
                     <a href="/about" class="hover:text-accent transition-colors">About</a>
                     <a href="/contact" class="hover:text-accent transition-colors">Contact</a>
                     <a href="/whats-next" class="text-accent font-semibold transition-colors">What's Next</a>
-                </div>
+                                <button id="mobileMenuBtn" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="/" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Home</a>
+                <a href="/services" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Services</a>
+                <a href="/about" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">About</a>
+                <a href="/contact" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Contact</a>
+                <a href="/whats-next" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">What's Next</a>
             </div>
         </div>
     </nav>
@@ -583,6 +595,21 @@
             document.querySelectorAll('section').forEach(section => {
                 observer.observe(section);
             });
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                    } else {
+                        menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                    }
+                });
+            }
         });
     </script>
 </body>
