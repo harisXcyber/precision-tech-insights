@@ -437,5 +437,103 @@
             }
         });
     </script>
+<!-- AI Chatbot -->
 </body>
+<!-- AI Chatbot - Add this before </body> tag on all pages -->
+<div id="chatbot-container" style="position: fixed; bottom: 28px; right: 28px; z-index: 9999;">
+    <button id="chat-toggle" style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(102,126,234,0.4); transition: transform 0.3s; border: none; cursor: pointer; font-size: 22px;">
+        💬
+    </button>
+    
+    <div id="chat-window" style="display: none; position: absolute; bottom: 70px; right: 0; width: 350px; height: 500px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <div style="font-weight: 600; font-size: 16px;">Precision Tech AI</div>
+                <div style="font-size: 12px; opacity: 0.9;">Ask me anything!</div>
+            </div>
+            <button id="chat-close" style="background: rgba(255,255,255,0.2); border: none; color: white; width: 28px; height: 28px; border-radius: 50%; cursor: pointer;">✕</button>
+        </div>
+        
+        <div id="chat-messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #f8f9fa;">
+            <div style="background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px;">
+                👋 Hi! I'm the Precision Tech AI assistant. Ask me about our services, projects, or how we can help you!
+            </div>
+        </div>
+        
+        <div style="padding: 16px; border-top: 1px solid #e9ecef; background: white;">
+            <form id="chat-form" style="display: flex; gap: 8px;">
+                <input type="text" id="chat-input" placeholder="Type your message..." style="flex: 1; padding: 10px 14px; border: 1px solid #dee2e6; border-radius: 8px; font-size: 14px;" required>
+                <button type="submit" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600;">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+const chatToggle = document.getElementById('chat-toggle');
+const chatWindow = document.getElementById('chat-window');
+const chatClose = document.getElementById('chat-close');
+const chatForm = document.getElementById('chat-form');
+const chatInput = document.getElementById('chat-input');
+const chatMessages = document.getElementById('chat-messages');
+let conversationHistory = [];
+
+chatToggle.addEventListener('click', () => {
+    chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
+});
+
+chatClose.addEventListener('click', () => {
+    chatWindow.style.display = 'none';
+});
+
+chatForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    const userMsg = document.createElement('div');
+    userMsg.style.cssText = 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px; border-radius: 12px; font-size: 14px; align-self: flex-end; max-width: 80%;';
+    userMsg.textContent = message;
+    chatMessages.appendChild(userMsg);
+    chatInput.value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    const typing = document.createElement('div');
+    typing.id = 'typing';
+    typing.style.cssText = 'background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px;';
+    typing.textContent = 'Typing...';
+    chatMessages.appendChild(typing);
+
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message, conversationHistory })
+        });
+
+        const data = await response.json();
+        typing.remove();
+
+        if (data.success) {
+            const botMsg = document.createElement('div');
+            botMsg.style.cssText = 'background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px; max-width: 80%;';
+            botMsg.textContent = data.response;
+            chatMessages.appendChild(botMsg);
+            
+            conversationHistory.push(
+                { role: 'user', content: message },
+                { role: 'assistant', content: data.response }
+            );
+        }
+    } catch (error) {
+        typing.remove();
+        const errorMsg = document.createElement('div');
+        errorMsg.style.cssText = 'background: #fee; padding: 12px; border-radius: 12px; font-size: 14px;';
+        errorMsg.textContent = 'Error. Please try again.';
+        chatMessages.appendChild(errorMsg);
+    }
+    
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+</script>
 </html>
