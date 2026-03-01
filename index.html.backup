@@ -73,11 +73,12 @@
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="/" class="text-accent font-semibold transition-colors">Home</a>
+                    <a href="/services" class="hover:text-accent transition-colors">Services</a>
                     <a href="/about" class="hover:text-accent transition-colors">About</a>
                     <a href="/contact" class="hover:text-accent transition-colors">Contact</a>
                     <a href="/whats-next" class="hover:text-accent transition-colors">What's Next</a>
-                    <a href="https://itovio.com" target="_blank" class="bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-bold px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                        Itovio <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full">NEW</span>
+                    <a href="https://hosting.precisiontechinsights.com" target="_blank" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                        Hosting <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full">NEW</span>
                     </a>
                 </div>
                 <button id="mobileMenuBtn" class="md:hidden focus:outline-none">
@@ -89,11 +90,12 @@
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
                 <a href="/" class="block text-accent font-semibold py-2 px-4 rounded hover:bg-accent/10 transition-colors">Home</a>
+                <a href="/services" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Services</a>
                 <a href="/about" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">About</a>
                 <a href="/contact" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Contact</a>
                 <a href="/whats-next" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">What's Next</a>
-                <a href="https://itovio.com" target="_blank" class="block bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center">
-                    Itovio <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full ml-2">NEW</span>
+                <a href="https://hosting.precisiontechinsights.com" target="_blank" class="block bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center">
+                    Hosting <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full ml-2">NEW</span>
                 </a>
             </div>
         </div>
@@ -120,8 +122,8 @@
                 </p>
             </div>
             <div class="flex flex-col md:flex-row gap-4 justify-center animate-slide-up">
-                <a href="https://itovio.com" target="_blank" class="bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                    Visit Our Services Platform
+                <a href="/services" class="bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                    Explore Services
                 </a>
                 <a href="/contact" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                     Get Quote
@@ -135,10 +137,7 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Our Core Services</h2>
-                <p class="text-xl text-gray-600 mb-6">Five specialized divisions delivering excellence</p>
-                <a href="https://itovio.com" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
-                    Explore Our Services Platform →
-                </a>
+                <p class="text-xl text-gray-600">Five specialized divisions delivering excellence</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -146,35 +145,35 @@
                     <div class="text-4xl mb-4 group-hover:animate-bounce-slow">💻</div>
                     <h3 class="text-2xl font-bold mb-4 text-primary">Web Development</h3>
                     <p class="text-gray-600 mb-4">MERN, Django, Laravel, React, Next.js - Modern web solutions that scale.</p>
-                    <a href="https://itovio.com/services" class="text-accent hover:text-blue-700 font-semibold transition-colors">Learn More →</a>
+                    <a href="/services#web" class="text-accent hover:text-blue-700 font-semibold transition-colors">Learn More →</a>
                 </div>
                 
                 <div class="group bg-gradient-to-br from-red-50 to-pink-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
                     <div class="text-4xl mb-4 group-hover:animate-bounce-slow">🔒</div>
                     <h3 class="text-2xl font-bold mb-4 text-red-600">Cybersecurity</h3>
                     <p class="text-gray-600 mb-4">Penetration testing, security audits, and ethical hacking services.</p>
-                    <a href="https://itovio.com/services" class="text-red-500 hover:text-red-700 font-semibold transition-colors">Learn More →</a>
+                    <a href="/services#security" class="text-red-500 hover:text-red-700 font-semibold transition-colors">Learn More →</a>
                 </div>
                 
                 <div class="group bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
                     <div class="text-4xl mb-4 group-hover:animate-bounce-slow">📊</div>
                     <h3 class="text-2xl font-bold mb-4 text-green-600">Data Science</h3>
                     <p class="text-gray-600 mb-4">Analytics, visualization, automation, and intelligent dashboards.</p>
-                    <a href="https://itovio.com/services" class="text-green-500 hover:text-green-700 font-semibold transition-colors">Learn More →</a>
+                    <a href="/services#data" class="text-green-500 hover:text-green-700 font-semibold transition-colors">Learn More →</a>
                 </div>
                 
                 <div class="group bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
                     <div class="text-4xl mb-4 group-hover:animate-bounce-slow">🤖</div>
                     <h3 class="text-2xl font-bold mb-4 text-purple-600">AI & Automation</h3>
                     <p class="text-gray-600 mb-4">Chatbots, NLP, process automation, and smart systems.</p>
-                    <a href="https://itovio.com/services" class="text-purple-500 hover:text-purple-700 font-semibold transition-colors">Learn More →</a>
+                    <a href="/services#ai" class="text-purple-500 hover:text-purple-700 font-semibold transition-colors">Learn More →</a>
                 </div>
                 
                 <div class="group bg-gradient-to-br from-yellow-50 to-orange-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
                     <div class="text-4xl mb-4 group-hover:animate-bounce-slow">🎨</div>
                     <h3 class="text-2xl font-bold mb-4 text-orange-600">Content Creation</h3>
                     <p class="text-gray-600 mb-4">Branding, video content, and social media assets.</p>
-                    <a href="https://itovio.com/services" class="text-orange-500 hover:text-orange-700 font-semibold transition-colors">Learn More →</a>
+                    <a href="/services#content" class="text-orange-500 hover:text-orange-700 font-semibold transition-colors">Learn More →</a>
                 </div>
                 
                 <div class="group bg-gradient-to-br from-yellow-100 to-amber-200 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up border-2 border-yellow-400">
@@ -186,56 +185,16 @@
                     <p class="text-gray-700 mb-4">Professional crypto content for Binance Square. Starting at $299/month.</p>
                     <a href="https://precisionflow.io" target="_blank" class="text-yellow-700 hover:text-yellow-900 font-semibold transition-colors">Visit PrecisionFlow.io →</a>
                 </div>
-            </div>
-            
-            <!-- Itovio Banner -->
-            <a href="https://itovio.com" target="_blank" class="block mt-16 group">
-                <div class="max-w-5xl mx-auto bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl animate-fade-in relative">
-                    <!-- Animated background effect -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 group-hover:translate-x-full transition-transform duration-1000"></div>
-                    
-                    <div class="px-8 py-10 relative z-10">
-                        <div class="text-center text-white">
-                            <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold mb-4 animate-pulse-slow">
-                                ✨ NEW - Our Services Platform
-                            </div>
-                            <h3 class="text-5xl md:text-6xl font-bold mb-3 group-hover:scale-105 transition-transform duration-300">
-                                Itovio
-                            </h3>
-                            <p class="text-blue-100 text-xl mb-8 max-w-2xl mx-auto">
-                                Your complete digital technology partner for modern solutions
-                            </p>
-                            
-                            <!-- Feature Grid -->
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-                                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-                                    <div class="text-3xl mb-2">💻</div>
-                                    <div class="text-sm font-semibold">9 Core Services</div>
-                                </div>
-                                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-                                    <div class="text-3xl mb-2">📦</div>
-                                    <div class="text-sm font-semibold">Fixed Packages</div>
-                                </div>
-                                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-                                    <div class="text-3xl mb-2">⚡</div>
-                                    <div class="text-sm font-semibold">Custom Projects</div>
-                                </div>
-                                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-                                    <div class="text-3xl mb-2">👥</div>
-                                    <div class="text-sm font-semibold">Expert Team</div>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-6 text-blue-100 text-sm flex items-center justify-center gap-2 group-hover:gap-3 transition-all duration-300">
-                                <span>Click to explore</span>
-                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
+                
+                <div class="group bg-gradient-to-br from-gray-800 to-gray-900 text-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
+                    <div class="text-4xl mb-4">💡</div>
+                    <h3 class="text-2xl font-bold mb-4">Ready to Start?</h3>
+                    <p class="mb-6 text-gray-300">Get a custom quote for your project needs</p>
+                    <a href="/contact" class="bg-accent hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 w-full block text-center">
+                        Get Quote Now
+                    </a>
                 </div>
-            </a>
+            </div>
         </div>
     </section>
 
@@ -318,10 +277,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://itovio.com/services#web" class="hover:text-white transition-colors">Web Development</a></li>
-                        <li><a href="https://itovio.com/services#security" class="hover:text-white transition-colors">Cybersecurity</a></li>
-                        <li><a href="https://itovio.com/services#data" class="hover:text-white transition-colors">Data Science</a></li>
-                        <li><a href="https://itovio.com/services#ai" class="hover:text-white transition-colors">AI & Automation</a></li>
+                        <li><a href="/services#web" class="hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="/services#security" class="hover:text-white transition-colors">Cybersecurity</a></li>
+                        <li><a href="/services#data" class="hover:text-white transition-colors">Data Science</a></li>
+                        <li><a href="/services#ai" class="hover:text-white transition-colors">AI & Automation</a></li>
                     </ul>
                 </div>
                 <div>

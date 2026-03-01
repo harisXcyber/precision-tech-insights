@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Services - Precision Tech Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../brand.css">
+    <link rel="icon" type="image/png" href="../favicon.png">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-secondary/95 backdrop-blur-md text-white fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="../company_logo.png" alt="Precision Tech Insights" class="w-10 h-10 rounded-full">
+                    <div class="text-xl font-bold">Precision Tech Insights</div>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="../index.html" class="hover:text-accent transition-colors">Home</a>
+                    <a href="../services.html" class="text-accent font-semibold">Services</a>
+                    <a href="../about.html" class="hover:text-accent transition-colors">About</a>
+                    <a href="../contact.html" class="hover:text-accent transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Header -->
+    <div class="category-header" style="margin-top: 72px;">
+        <div class="container mx-auto px-4" style="position: relative; z-index: 1;">
+            <h1 class="category-title">Web Development</h1>
+            <p style="font-size: 1.25rem; color: var(--gray-600); max-width: 800px; margin: 0 auto;">
+                Modern, scalable web solutions built with cutting-edge technologies
+            </p>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading" style="padding: 5rem 0; text-align: center;">
+        <div style="display: inline-block; width: 50px; height: 50px; border: 4px solid var(--gray-200); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <p style="margin-top: 1rem; color: var(--gray-600);">Loading products...</p>
+    </div>
+
+    <!-- Products Grid -->
+    <section id="products-section" style="padding: 5rem 0; display: none;">
+        <div class="container mx-auto px-4">
+            <div id="products-grid" class="grid-3">
+                
+                <!-- Starter Site -->
+                <div class="product-card animate-fadeInUp stagger-1">
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.5rem;">Starter Site</h3>
+                        <p style="color: var(--gray-500); margin-bottom: 1rem;">Perfect for small businesses</p>
+                        <div class="product-price">$299</div>
+                        <p style="color: var(--gray-500); font-size: 0.875rem;">One-time payment</p>
+                    </div>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check feature-icon"></i> Up to 5 pages</li>
+                        <li><i class="fas fa-check feature-icon"></i> Mobile responsive design</li>
+                        <li><i class="fas fa-check feature-icon"></i> Contact form integration</li>
+                        <li><i class="fas fa-check feature-icon"></i> Basic SEO optimization</li>
+                        <li><i class="fas fa-check feature-icon"></i> 3 revision rounds</li>
+                        <li><i class="fas fa-check feature-icon"></i> 7-day delivery</li>
+                        <li><i class="fas fa-check feature-icon"></i> 30-day support</li>
+                    </ul>
+                    
+                    <a href="./products/starter-site.html" class="btn btn-outline btn-full">View Details</a>
+                </div>
+
+                <!-- Business Site -->
+                <div class="product-card featured animate-fadeInUp stagger-2">
+                    <div class="product-badge">POPULAR</div>
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.5rem;">Business Site</h3>
+                        <p style="color: var(--gray-500); margin-bottom: 1rem;">Most popular choice</p>
+                        <div class="product-price">$599</div>
+                        <p style="color: var(--gray-500); font-size: 0.875rem;">One-time payment</p>
+                    </div>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check feature-icon"></i> Up to 10 pages</li>
+                        <li><i class="fas fa-check feature-icon"></i> Custom design</li>
+                        <li><i class="fas fa-check feature-icon"></i> CMS integration</li>
+                        <li><i class="fas fa-check feature-icon"></i> Advanced SEO</li>
+                        <li><i class="fas fa-check feature-icon"></i> Blog functionality</li>
+                        <li><i class="fas fa-check feature-icon"></i> 5 revision rounds</li>
+                        <li><i class="fas fa-check feature-icon"></i> 14-day delivery</li>
+                        <li><i class="fas fa-check feature-icon"></i> 60-day support</li>
+                    </ul>
+                    
+                    <a href="./products/business-site.html" class="btn btn-primary btn-full">View Details</a>
+                </div>
+
+                <!-- E-commerce Site -->
+                <div class="product-card animate-fadeInUp stagger-3">
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.5rem;">E-commerce Site</h3>
+                        <p style="color: var(--gray-500); margin-bottom: 1rem;">Full online store</p>
+                        <div class="product-price">$1,299</div>
+                        <p style="color: var(--gray-500); font-size: 0.875rem;">One-time payment</p>
+                    </div>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check feature-icon"></i> Unlimited pages</li>
+                        <li><i class="fas fa-check feature-icon"></i> Product catalog</li>
+                        <li><i class="fas fa-check feature-icon"></i> Payment gateway</li>
+                        <li><i class="fas fa-check feature-icon"></i> Inventory management</li>
+                        <li><i class="fas fa-check feature-icon"></i> Order tracking</li>
+                        <li><i class="fas fa-check feature-icon"></i> Customer accounts</li>
+                        <li><i class="fas fa-check feature-icon"></i> 21-day delivery</li>
+                        <li><i class="fas fa-check feature-icon"></i> 90-day support</li>
+                    </ul>
+                    
+                    <a href="./products/ecommerce-site.html" class="btn btn-secondary btn-full">View Details</a>
+                </div>
+
+                <!-- Enterprise Solution -->
+                <div class="product-card animate-fadeInUp stagger-4">
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.5rem;">Enterprise Solution</h3>
+                        <p style="color: var(--gray-500); margin-bottom: 1rem;">Custom enterprise platform</p>
+                        <div class="product-price">$4,999+</div>
+                        <p style="color: var(--gray-500); font-size: 0.875rem;">Custom pricing</p>
+                    </div>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check feature-icon"></i> Fully custom solution</li>
+                        <li><i class="fas fa-check feature-icon"></i> Advanced features</li>
+                        <li><i class="fas fa-check feature-icon"></i> API integrations</li>
+                        <li><i class="fas fa-check feature-icon"></i> Database design</li>
+                        <li><i class="fas fa-check feature-icon"></i> Admin dashboard</li>
+                        <li><i class="fas fa-check feature-icon"></i> Unlimited revisions</li>
+                        <li><i class="fas fa-check feature-icon"></i> Custom timeline</li>
+                        <li><i class="fas fa-check feature-icon"></i> 1-year support</li>
+                    </ul>
+                    
+                    <a href="./products/enterprise-solution.html" class="btn btn-outline btn-full">View Details</a>
+                </div>
+
+            </div>
+
+            <!-- CTA Section -->
+            <div style="margin-top: 5rem; text-align: center; background: white; padding: 4rem 2rem; border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl);">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; background: var(--gradient-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    Need Something Custom?
+                </h2>
+                <p style="font-size: 1.25rem; color: var(--gray-600); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Have unique requirements? Let's discuss your project and create a tailored solution.
+                </p>
+                <a href="../contact.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-comments"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2026 Precision Tech Insights. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Product Group ID for Web Development
+        const PRODUCT_GROUP_ID = 5;
+        
+        async function loadProducts() {
+            try {
+                // Fetch products from ClientExec
+                const response = await fetch(`https://hosting.precisiontechinsights.com/order.php?step=1&productGroup=${PRODUCT_GROUP_ID}`);
+                const html = await response.text();
+                
+                // Parse HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // Extract product data
+                const products = extractProducts(doc);
+                
+                // Render products
+                renderProducts(products);
+                
+            } catch (error) {
+                console.error('Error loading products:', error);
+                showError();
+            }
+        }
+        
+        function extractProducts(doc) {
+            const products = [];
+            
+            // Try to find product elements (adjust selectors based on actual HTML)
+            const productElements = doc.querySelectorAll('.product-item, [data-product], .package');
+            
+            productElements.forEach(element => {
+                const name = element.querySelector('.product-name, h3, h2')?.textContent.trim();
+                const price = element.querySelector('.price, .product-price')?.textContent.trim();
+                const description = element.querySelector('.description, p')?.textContent.trim();
+                const link = element.querySelector('a')?.href;
+                
+                if (name) {
+                    products.push({ name, price, description, link });
+                }
+            });
+            
+            return products;
+        }
+        
+        function renderProducts(products) {
+            const container = document.getElementById('products-grid');
+            
+            if (products.length === 0) {
+                // Fallback: Show placeholder products
+                products = [
+                    {
+                        name: 'Starter Site',
+                        price: '$299',
+                        description: 'Perfect for small businesses',
+                        features: ['5 pages', 'Mobile responsive', 'Contact form', 'Basic SEO', '3 revisions', '7-day delivery'],
+                        link: 'https://hosting.precisiontechinsights.com/order.php?step=1&productGroup=5&product=1'
+                    },
+                    {
+                        name: 'Business Site',
+                        price: '$599',
+                        description: 'Most popular choice',
+                        featured: true,
+                        features: ['10 pages', 'Custom design', 'CMS integration', 'Advanced SEO', 'Blog', '5 revisions', '14-day delivery'],
+                        link: 'https://hosting.precisiontechinsights.com/order.php?step=1&productGroup=5&product=2'
+                    },
+                    {
+                        name: 'E-commerce Site',
+                        price: '$1,299',
+                        description: 'Full online store',
+                        features: ['Unlimited pages', 'Product catalog', 'Payment gateway', 'Inventory', 'Order tracking', '21-day delivery'],
+                        link: 'https://hosting.precisiontechinsights.com/order.php?step=1&productGroup=5&product=3'
+                    }
+                ];
+            }
+            
+            products.forEach((product, index) => {
+                const card = document.createElement('div');
+                card.className = `product-card animate-fadeInUp ${product.featured ? 'featured' : ''}`;
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                let featuresHTML = '';
+                if (product.features) {
+                    featuresHTML = '<ul class="product-features">';
+                    product.features.forEach(feature => {
+                        featuresHTML += `<li><i class="fas fa-check feature-icon"></i> ${feature}</li>`;
+                    });
+                    featuresHTML += '</ul>';
+                }
+                
+                card.innerHTML = `
+                    ${product.featured ? '<div class="product-badge">POPULAR</div>' : ''}
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.5rem;">${product.name}</h3>
+                        <p style="color: var(--gray-500); margin-bottom: 1rem;">${product.description}</p>
+                        <div class="product-price">${product.price}</div>
+                        <p style="color: var(--gray-500); font-size: 0.875rem;">One-time payment</p>
+                    </div>
+                    ${featuresHTML}
+                    <a href="${product.link}" class="btn ${product.featured ? 'btn-primary' : 'btn-outline'} btn-full">
+                        <i class="fas fa-shopping-cart"></i> Order Now
+                    </a>
+                `;
+                
+                container.appendChild(card);
+            });
+            
+            // Hide loading, show content
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('products-section').style.display = 'block';
+        }
+        
+        function showError() {
+            document.getElementById('loading').innerHTML = `
+                <div style="text-align: center; padding: 3rem;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: var(--error); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Unable to load products</h3>
+                    <p style="color: var(--gray-600); margin-bottom: 2rem;">Please try again or contact support.</p>
+                    <a href="../contact.html" class="btn btn-primary">Contact Support</a>
+                </div>
+            `;
+        }
+        
+        // Load products on page load
+        window.addEventListener('DOMContentLoaded', loadProducts);
+    </script>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+</body>
+</html>

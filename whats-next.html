@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Next - Precision Tech Insights</title>
-    <meta name="description" content="Discover what's coming next at Precision Tech Insights - our expanding team, tech courses, and innovative SaaS solutions.">
+    <meta name="description" content="Discover what's coming next at Precision Tech Insights - our product launches and future roadmap.">
     <link rel="icon" type="image/png" href="/favicon.png">
     
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5MLG8Y3EH"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -29,12 +28,8 @@
                     animation: {
                         'fade-in': 'fadeIn 0.8s ease-in-out',
                         'slide-up': 'slideUp 0.6s ease-out',
-                        'slide-left': 'slideLeft 0.8s ease-out',
-                        'slide-right': 'slideRight 0.8s ease-out',
-                        'scale-in': 'scaleIn 0.6s ease-out',
                         'bounce-slow': 'bounce 2s infinite',
-                        'pulse-slow': 'pulse 3s infinite',
-                        'float': 'float 6s ease-in-out infinite'
+                        'pulse-slow': 'pulse 3s infinite'
                     },
                     keyframes: {
                         fadeIn: {
@@ -44,22 +39,6 @@
                         slideUp: {
                             '0%': { opacity: '0', transform: 'translateY(50px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        slideLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' }
-                        },
-                        slideRight: {
-                            '0%': { opacity: '0', transform: 'translateX(50px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' }
-                        },
-                        scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.8)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' }
                         }
                     }
                 }
@@ -73,14 +52,9 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
     </style>
 </head>
-<body class="bg-white text-gray-900 overflow-x-hidden">
+<body class="bg-white text-gray-900">
     <!-- Navigation -->
     <nav class="bg-secondary/95 backdrop-blur-md text-white fixed w-full z-50 shadow-lg">
         <div class="container mx-auto px-4 py-4">
@@ -91,624 +65,536 @@
                         <span class="gradient-text">Precision Tech Insights</span>
                     </div>
                 </div>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden md:flex space-x-8 items-center">
                     <a href="/" class="hover:text-accent transition-colors">Home</a>
-                    <a href="/services" class="hover:text-accent transition-colors">Services</a>
                     <a href="/about" class="hover:text-accent transition-colors">About</a>
                     <a href="/contact" class="hover:text-accent transition-colors">Contact</a>
-                    <a href="/whats-next" class="text-accent font-semibold transition-colors">What's Next</a>
-                                <button id="mobileMenuBtn" class="md:hidden focus:outline-none">
+                    <a href="/whats-next" class="text-accent font-semibold">What's Next</a>
+                    <a href="https://itovio.com" target="_blank" class="bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-bold px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                        Itovio <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full">NEW</span>
+                    </a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
-            <!-- Mobile Menu -->
             <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
                 <a href="/" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Home</a>
-                <a href="/services" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Services</a>
                 <a href="/about" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">About</a>
                 <a href="/contact" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Contact</a>
-                <a href="/whats-next" class="block text-accent font-semibold py-2 px-4 rounded hover:bg-accent/10 transition-colors">What's Next</a>
+                <a href="/whats-next" class="block text-accent font-semibold py-2 px-4 rounded">What's Next</a>
+                <a href="https://itovio.com" target="_blank" class="block bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center">
+                    Itovio <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full ml-2">NEW</span>
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
-            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float animation-delay-3000"></div>
+    <!-- Hero -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+                What's <span class="gradient-text">Next</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-slide-up">
+                The Future of Precision Tech Insights
+            </p>
         </div>
-        
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="animate-fade-in">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                    What's <span class="gradient-text">Next</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-slide-up">
-                    The Future of Precision Tech Insights
+    </section>
+
+    <!-- 2025: Company Launch -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold mb-6">
+                    COMPLETED - 2025
+                </div>
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Company Launch & Team Setup</h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    In 2025, we established Precision Tech Insights, assembled our expert team, and built the foundation for delivering world-class technology solutions.
                 </p>
-                <p class="text-lg text-gray-500 mb-12 max-w-2xl mx-auto animate-slide-up">
-                    Exciting developments are on the horizon. Discover what we're building to serve you better.
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <div class="text-3xl mb-3">🏢</div>
+                        <h3 class="font-bold text-lg mb-2">Company Established</h3>
+                        <p class="text-gray-600">Legal entity formed and operations launched</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <div class="text-3xl mb-3">👥</div>
+                        <h3 class="font-bold text-lg mb-2">Team Assembled</h3>
+                        <p class="text-gray-600">Expert developers and specialists onboarded</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <div class="text-3xl mb-3">⚙️</div>
+                        <h3 class="font-bold text-lg mb-2">Infrastructure Ready</h3>
+                        <p class="text-gray-600">Systems and processes in place</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PrecisionFlow Launch -->
+    <section class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold mb-6">
+                    🚀 LIVE - 2026
+                </div>
+                <h2 class="text-4xl font-bold mb-6 gradient-text">PrecisionFlow - Crypto Analysis Platform</h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Data-driven cryptocurrency insights and analysis. We deliver research-backed analysis on Bitcoin, Ethereum, altcoins, and market trends without the noise.
                 </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">📊</div>
+                        <h3 class="font-bold text-lg mb-2">Data-Driven</h3>
+                        <p class="text-gray-600">Every analysis backed by on-chain data and market metrics</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">📅</div>
+                        <h3 class="font-bold text-lg mb-2">Daily Updates</h3>
+                        <p class="text-gray-600">Fresh insights on Binance Square as markets move</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">✅</div>
+                        <h3 class="font-bold text-lg mb-2">No BS</h3>
+                        <p class="text-gray-600">Honest analysis, no shilling, no paid promotions</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://precisionflow.io" target="_blank" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Visit PrecisionFlow →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itovio Launch -->
+    <section class="py-20 bg-gradient-to-br from-cyan-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-semibold mb-6">
+                    🚀 LIVE - 2026
+                </div>
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Itovio - Our Services Platform</h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Your complete digital services partner. From web development to cybersecurity, AI automation to data science - Itovio delivers end-to-end technology solutions.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">🌐</div>
+                        <h3 class="font-bold text-lg mb-2">9 Core Services</h3>
+                        <p class="text-gray-600">Comprehensive technology solutions under one roof</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">📦</div>
+                        <h3 class="font-bold text-lg mb-2">Fixed Packages</h3>
+                        <p class="text-gray-600">Transparent pricing with clear deliverables</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">⚡</div>
+                        <h3 class="font-bold text-lg mb-2">Custom Projects</h3>
+                        <p class="text-gray-600">Tailored solutions for unique business needs</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://itovio.com" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Visit Itovio →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precision Tech Academy -->
+    <section class="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="inline-block bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-semibold mb-6">
+                    📚 COMING SOON
+                </div>
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Precision Tech Academy</h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Learn from industry experts. Our upcoming tech academy will offer comprehensive courses in web development, cybersecurity, data science, and AI automation.
+                </p>
+                
+                <div class="grid md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">💻</div>
+                        <h3 class="font-bold text-lg">Web Development</h3>
+                        <p class="text-sm text-gray-600">MERN, Django, React</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">🔒</div>
+                        <h3 class="font-bold text-lg">Cybersecurity</h3>
+                        <p class="text-sm text-gray-600">Ethical Hacking, Pentesting</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">📊</div>
+                        <h3 class="font-bold text-lg">Data Science</h3>
+                        <p class="text-sm text-gray-600">Python, ML, Analytics</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-3xl mb-3">🤖</div>
+                        <h3 class="font-bold text-lg">AI & Automation</h3>
+                        <p class="text-sm text-gray-600">ChatGPT, NLP, RPA</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">What to Expect</h3>
+                    <div class="space-y-3 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span>Official Precision Tech Insights Certificates</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span>Industry-Recognized Curriculum</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span>Hands-on Project-Based Learning</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span>Expert Instructor Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precision SaaS Suite -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Precision SaaS Suite</h2>
+                <p class="text-xl text-gray-600">Our growing portfolio of software products</p>
             </div>
             
-            <div class="animate-scale-in">
-                <div class="inline-block bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg">
-                    Coming Soon
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Growing Team -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl font-bold mb-4 gradient-text">🌟 Our Growing Team</h2>
-                    <p class="text-xl text-gray-600">Building a world-class team of professionals</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- PrecisionFlow -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-purple-600">PrecisionFlow</h3>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">LIVE</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Crypto analysis platform delivering data-driven insights on Bitcoin, Ethereum, and altcoins.
+                    </p>
+                    <a href="https://precisionflow.io" target="_blank" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Visit PrecisionFlow →
+                    </a>
                 </div>
                 
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="animate-slide-left">
-                        <h3 class="text-3xl font-bold mb-6 text-primary">Expanding Our Expertise</h3>
-                        <p class="text-lg text-gray-600 mb-6">
-                            We're actively building a diverse team of technology professionals to enhance our service delivery and expand our capabilities across all five core divisions.
-                        </p>
-                        
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">Senior Full-Stack Developers</span>
-                            </div>
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">Cybersecurity Specialists</span>
-                            </div>
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">Data Scientists & ML Engineers</span>
-                            </div>
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">AI/Automation Experts</span>
-                            </div>
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-orange-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">Creative Content Specialists</span>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl">
-                            <h4 class="text-xl font-bold mb-3 text-primary">Why Join Our Team?</h4>
-                            <ul class="space-y-2 text-gray-600">
-                                <li>• Remote-first culture with global opportunities</li>
-                                <li>• Work on cutting-edge technology projects</li>
-                                <li>• Competitive compensation and benefits</li>
-                                <li>• Professional growth and learning opportunities</li>
-                            </ul>
-                        </div>
+                <!-- Itovio -->
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-blue-600">Itovio</h3>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">LIVE</span>
                     </div>
-                    
-                    <div class="animate-slide-right">
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <div class="text-center">
-                                <div class="text-6xl mb-6 animate-bounce-slow">👥</div>
-                                <h3 class="text-2xl font-bold mb-4 text-primary">Team Expansion Timeline</h3>
-                                
-                                <div class="space-y-4 text-left">
-                                    <div class="bg-white p-4 rounded-lg shadow">
-                                        <div class="flex justify-between items-center">
-                                            <span class="font-semibold text-blue-600">Q1</span>
-                                            <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">In Progress</span>
-                                        </div>
-                                        <p class="text-sm text-gray-600 mt-2">Hiring 3-5 senior developers</p>
-                                    </div>
-                                    
-                                    <div class="bg-white p-4 rounded-lg shadow">
-                                        <div class="flex justify-between items-center">
-                                            <span class="font-semibold text-green-600">Q2</span>
-                                            <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">Planned</span>
-                                        </div>
-                                        <p class="text-sm text-gray-600 mt-2">Security & AI specialists</p>
-                                    </div>
-                                    
-                                    <div class="bg-white p-4 rounded-lg shadow">
-                                        <div class="flex justify-between items-center">
-                                            <span class="font-semibold text-purple-600">Q3</span>
-                                            <span class="text-sm bg-purple-100 text-purple-800 px-2 py-1 rounded">Future</span>
-                                        </div>
-                                        <p class="text-sm text-gray-600 mt-2">Creative & content team</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Courses -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl font-bold mb-4 gradient-text">🎓 Precision Tech Academy</h2>
-                    <p class="text-xl text-gray-600">Expert-crafted courses with official certification</p>
+                    <p class="text-gray-600 mb-6">
+                        Complete digital services platform offering web development, cybersecurity, AI automation, and more.
+                    </p>
+                    <a href="https://itovio.com" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Visit Itovio →
+                    </a>
                 </div>
                 
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="animate-slide-left order-2 lg:order-1">
-                        <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                            <div class="text-center">
-                                <div class="text-6xl mb-6 animate-float">📚</div>
-                                <h3 class="text-2xl font-bold mb-6 text-green-600">Course Categories</h3>
-                                
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300">
-                                        <div class="text-2xl mb-2">💻</div>
-                                        <h4 class="font-semibold text-blue-600">Web Development</h4>
-                                        <p class="text-xs text-gray-600">MERN, Django, React</p>
-                                    </div>
-                                    
-                                    <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300">
-                                        <div class="text-2xl mb-2">🔒</div>
-                                        <h4 class="font-semibold text-red-600">Cybersecurity</h4>
-                                        <p class="text-xs text-gray-600">Ethical Hacking, Pentesting</p>
-                                    </div>
-                                    
-                                    <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300">
-                                        <div class="text-2xl mb-2">📊</div>
-                                        <h4 class="font-semibold text-green-600">Data Science</h4>
-                                        <p class="text-xs text-gray-600">Python, ML, Analytics</p>
-                                    </div>
-                                    
-                                    <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300">
-                                        <div class="text-2xl mb-2">🤖</div>
-                                        <h4 class="font-semibold text-purple-600">AI & Automation</h4>
-                                        <p class="text-xs text-gray-600">ChatGPT, NLP, RPA</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- DataViz Studio -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-green-600">DataViz Studio</h3>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">PLANNED</span>
                     </div>
-                    
-                    <div class="animate-slide-right order-1 lg:order-2">
-                        <h3 class="text-3xl font-bold mb-6 text-primary">Learn from Industry Experts</h3>
-                        <p class="text-lg text-gray-600 mb-6">
-                            Our upcoming tech academy will offer comprehensive courses designed by industry professionals, featuring hands-on projects and real-world applications.
-                        </p>
-                        
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">Official Precision Tech Insights Certificates</span>
-                            </div>
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">Industry-Recognized Curriculum</span>
-                            </div>
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">Hands-on Project-Based Learning</span>
-                            </div>
-                            <div class="flex items-center space-x-3 hover:translate-x-2 transition-all duration-300">
-                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow"></div>
-                                <span class="font-semibold">Career Guidance & Job Placement Support</span>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
-                            <h4 class="text-xl font-bold mb-3 text-green-600">🎯 Launch Timeline</h4>
-                            <div class="space-y-2 text-gray-600">
-                                <p><strong>Beta Launch:</strong> Q2</p>
-                                <p><strong>Full Platform:</strong> Q3</p>
-                                <p><strong>First Cohort:</strong> September</p>
-                            </div>
-                        </div>
+                    <p class="text-gray-600 mb-4">
+                        No-code data visualization platform for creating stunning dashboards and reports.
+                    </p>
+                    <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p>• Drag-and-drop dashboard builder</p>
+                        <p>• Multiple data source connectors</p>
+                        <p>• Real-time data updates</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SaaS Solutions -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl font-bold mb-4 gradient-text">⚡ Precision SaaS Suite</h2>
-                    <p class="text-xl text-gray-600">Innovative SaaS applications to streamline your business</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
-                        <div class="text-4xl mb-4 animate-bounce-slow">🔗</div>
-                        <h3 class="text-2xl font-bold mb-4 text-blue-600">Linkly Pro</h3>
-                        <p class="text-gray-600 mb-4">Advanced URL shortening with analytics, custom domains, and team collaboration features.</p>
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <p>• Custom branded domains</p>
-                            <p>• Advanced analytics dashboard</p>
-                            <p>• Team management & API access</p>
-                            <p>• QR code generation</p>
-                        </div>
-                        <div class="mt-6">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Q1</span>
-                        </div>
+                <!-- AutoFlow -->
+                <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-purple-600">AutoFlow</h3>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">PLANNED</span>
                     </div>
-                    
-                    <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
-                        <div class="text-4xl mb-4 animate-bounce-slow">📊</div>
-                        <h3 class="text-2xl font-bold mb-4 text-green-600">DataViz Studio</h3>
-                        <p class="text-gray-600 mb-4">No-code data visualization platform for creating stunning dashboards and reports.</p>
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <p>• Drag-and-drop dashboard builder</p>
-                            <p>• Multiple data source connectors</p>
-                            <p>• Real-time data updates</p>
-                            <p>• Collaborative sharing features</p>
-                        </div>
-                        <div class="mt-6">
-                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Q2</span>
-                        </div>
+                    <p class="text-gray-600 mb-4">
+                        Business process automation platform with AI-powered workflow optimization.
+                    </p>
+                    <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p>• Visual workflow designer</p>
+                        <p>• AI-powered optimization</p>
+                        <p>• Integration with 100+ apps</p>
                     </div>
-                    
-                    <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
-                        <div class="text-4xl mb-4 animate-bounce-slow">🤖</div>
-                        <h3 class="text-2xl font-bold mb-4 text-purple-600">AutoFlow</h3>
-                        <p class="text-gray-600 mb-4">Business process automation platform with AI-powered workflow optimization.</p>
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <p>• Visual workflow designer</p>
-                            <p>• AI-powered optimization</p>
-                            <p>• Integration with 100+ apps</p>
-                            <p>• Advanced scheduling & triggers</p>
-                        </div>
-                        <div class="mt-6">
-                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">Q3</span>
-                        </div>
+                </div>
+                
+                <!-- SecureCheck -->
+                <div class="bg-gradient-to-br from-red-50 to-pink-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-red-600">SecureCheck</h3>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">PLANNED</span>
                     </div>
-                    
-                    <div class="bg-gradient-to-br from-red-50 to-pink-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
-                        <div class="text-4xl mb-4 animate-bounce-slow">🔒</div>
-                        <h3 class="text-2xl font-bold mb-4 text-red-600">SecureCheck</h3>
-                        <p class="text-gray-600 mb-4">Automated security scanning and vulnerability assessment for web applications.</p>
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <p>• Automated vulnerability scanning</p>
-                            <p>• Compliance reporting</p>
-                            <p>• Real-time security monitoring</p>
-                            <p>• Remediation recommendations</p>
-                        </div>
-                        <div class="mt-6">
-                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">Q4</span>
-                        </div>
+                    <p class="text-gray-600 mb-4">
+                        Automated security scanning and vulnerability assessment for web applications.
+                    </p>
+                    <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p>• Automated vulnerability scanning</p>
+                        <p>• Compliance reporting</p>
+                        <p>• Real-time security monitoring</p>
                     </div>
-                    
-                    <div class="bg-gradient-to-br from-orange-50 to-yellow-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
-                        <div class="text-4xl mb-4 animate-bounce-slow">🎨</div>
-                        <h3 class="text-2xl font-bold mb-4 text-orange-600">ContentCraft</h3>
-                        <p class="text-gray-600 mb-4">AI-powered content creation and social media management platform.</p>
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <p>• AI content generation</p>
-                            <p>• Multi-platform scheduling</p>
-                            <p>• Brand consistency tools</p>
-                            <p>• Performance analytics</p>
-                        </div>
-                        <div class="mt-6">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">Planned</span>
-                        </div>
+                </div>
+                
+                <!-- ContentCraft -->
+                <div class="bg-gradient-to-br from-orange-50 to-yellow-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-orange-600">ContentCraft</h3>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">PLANNED</span>
                     </div>
-                    
-                    <div class="bg-gradient-to-br from-yellow-50 to-amber-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up border-2 border-yellow-400">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="text-4xl animate-bounce-slow">🚀</div>
-                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">LIVE NOW</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-yellow-700">PrecisionFlow</h3>
-                        <p class="text-gray-700 mb-4 font-semibold">Professional Crypto Content for Binance Square</p>
-                        <p class="text-gray-600 mb-4 text-sm">Specialized content agency writing high-quality crypto articles exclusively for Binance Square.</p>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <p>• Market analysis & deep dives</p>
-                            <p>• Altcoin research reports</p>
-                            <p>• Trading strategy guides</p>
-                            <p>• SEO-optimized content</p>
-                            <p>• Account management</p>
-                        </div>
-                        <div class="mt-6 bg-white p-3 rounded-lg">
-                            <p class="text-sm text-gray-600 mb-2"><strong>Starting at $299/month</strong></p>
-                            <p class="text-xs text-gray-500">24-48 hour turnaround</p>
-                        </div>
-                        <div class="mt-4">
-                            <a href="https://precisionflow.io" target="_blank" class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-block">
-                                Visit PrecisionFlow.io →
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-gray-800 to-gray-900 text-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
-                        <div class="text-4xl mb-4">💡</div>
-                        <h3 class="text-2xl font-bold mb-4">Your Idea Here</h3>
-                        <p class="text-gray-300 mb-4">Have a SaaS idea? We're always looking for innovative solutions to build and bring to market.</p>
-                        <div class="space-y-2 text-sm text-gray-300">
-                            <p>• Custom SaaS development</p>
-                            <p>• Market validation & research</p>
-                            <p>• MVP development & launch</p>
-                            <p>• Ongoing support & scaling</p>
-                        </div>
-                        <div class="mt-6">
-                            <a href="/contact" class="bg-accent hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-block">
-                                Discuss Your Idea
-                            </a>
-                        </div>
+                    <p class="text-gray-600 mb-4">
+                        AI-powered content creation and social media management platform.
+                    </p>
+                    <div class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p>• AI content generation</p>
+                        <p>• Multi-platform scheduling</p>
+                        <p>• Brand consistency tools</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Overview -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <!-- Roadmap -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
         <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Our Roadmap</h2>
+                <p class="text-xl text-gray-600">The journey from launch to expansion</p>
+            </div>
+            
             <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16 animate-fade-in">
-                    <h2 class="text-4xl font-bold mb-4 gradient-text">🗓️ Our Roadmap</h2>
-                    <p class="text-xl text-gray-600">Key milestones for 2025 and beyond</p>
-                </div>
-                
                 <div class="space-y-8">
-                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-up">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">👥</span>
+                    <!-- Q1 2025 -->
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-24 text-center">
+                            <div class="bg-green-100 text-green-800 px-4 py-2 rounded-lg font-bold">Q1 2025</div>
+                        </div>
+                        <div class="flex-grow bg-white p-6 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <h3 class="text-xl font-bold">Company Launch & Team Setup</h3>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">DONE</span>
                             </div>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold text-blue-600">Q1: Team Expansion</h3>
-                                <p class="text-gray-600">Hiring 5+ professionals across all divisions</p>
-                            </div>
-                            <div class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full">In Progress</div>
+                            <p class="text-gray-600">Established Precision Tech Insights, assembled expert team, and built operational infrastructure.</p>
                         </div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-up">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">🎓</span>
+                    <!-- Q2 2026 -->
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-24 text-center">
+                            <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg font-bold">Q2 2026</div>
+                        </div>
+                        <div class="flex-grow bg-white p-6 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse-slow"></div>
+                                <h3 class="text-xl font-bold">Itovio Launch</h3>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">IN LAUNCH</span>
                             </div>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold text-green-600">Q2-Q3: Tech Academy Launch</h3>
-                                <p class="text-gray-600">Beta launch of our educational platform with first courses</p>
-                            </div>
-                            <div class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full">Planned</div>
+                            <p class="text-gray-600">Launching our comprehensive services platform offering 9 core technology solutions.</p>
                         </div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-up">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">⚡</span>
+                    <!-- Q3 2026 -->
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-24 text-center">
+                            <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-lg font-bold">Q3 2026</div>
+                        </div>
+                        <div class="flex-grow bg-white p-6 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse-slow"></div>
+                                <h3 class="text-xl font-bold">PrecisionFlow Development</h3>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">PROGRESSING</span>
                             </div>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold text-purple-600">Q1-Q4: SaaS Suite Rollout</h3>
-                                <p class="text-gray-600">Progressive launch of our SaaS applications</p>
-                            </div>
-                            <div class="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Development</div>
+                            <p class="text-gray-600">Expanding our crypto analysis platform with advanced features and deeper market insights.</p>
                         </div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-slide-up">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center">
-                                <span class="text-2xl">🚀</span>
+                    <!-- Q4 -->
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-24 text-center">
+                            <div class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg font-bold">Q4</div>
+                        </div>
+                        <div class="flex-grow bg-white p-6 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <h3 class="text-xl font-bold">Precision Tech Academy</h3>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">PLANNED</span>
                             </div>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold text-orange-600">Future: Global Expansion</h3>
-                                <p class="text-gray-600">International partnerships and market expansion</p>
-                            </div>
-                            <div class="text-sm bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Future</div>
+                            <p class="text-gray-600">Launching our educational platform with comprehensive tech courses and certifications.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-secondary text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="animate-fade-in">
-                <h2 class="text-4xl font-bold mb-6">Be Part of Our Journey</h2>
-                <p class="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
-                    Stay updated on our progress and be the first to access our new services, courses, and SaaS solutions.
-                </p>
-                <div class="flex flex-col md:flex-row gap-4 justify-center">
-                    <a href="/contact" class="bg-accent hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                        Join Our Journey
-                    </a>
-                    <a href="/services" class="border-2 border-white text-white hover:bg-white hover:text-secondary px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                        Current Services
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-secondary text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="/company_logo.png" alt="Precision Tech Insights" class="w-8 h-8 rounded-full">
-                        <h3 class="text-xl font-bold">Precision Tech Insights</h3>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">Precision Tech Insights</h3>
+                    <p class="text-gray-400">From Code to Intelligence - We Deliver Precision</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="/" class="block text-gray-400 hover:text-accent transition-colors">Home</a>
+                        <a href="/about" class="block text-gray-400 hover:text-accent transition-colors">About</a>
+                        <a href="/contact" class="block text-gray-400 hover:text-accent transition-colors">Contact</a>
+                        <a href="/whats-next" class="block text-gray-400 hover:text-accent transition-colors">What's Next</a>
                     </div>
-                    <p class="text-gray-400">From Code to Intelligence — We Deliver Precision</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/services#web" class="hover:text-white transition-colors">Web Development</a></li>
-                        <li><a href="/services#security" class="hover:text-white transition-colors">Cybersecurity</a></li>
-                        <li><a href="/services#data" class="hover:text-white transition-colors">Data Science</a></li>
-                        <li><a href="/services#ai" class="hover:text-white transition-colors">AI & Automation</a></li>
-                    </ul>
+                    <h4 class="font-bold mb-4">Our Products</h4>
+                    <div class="space-y-2">
+                        <a href="https://itovio.com" target="_blank" class="block text-gray-400 hover:text-accent transition-colors">Itovio</a>
+                        <a href="https://precisionflow.io" target="_blank" class="block text-gray-400 hover:text-accent transition-colors">PrecisionFlow</a>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="/whats-next" class="hover:text-white transition-colors">What's Next</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>📱 +92 348 1383350</li>
-                        <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">💼 LinkedIn</a></li>
-                    </ul>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>contact@precisiontechinsights.com</p>
+                        <p>+92 348 1383350</p>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Precision Tech Insights. All rights reserved.</p>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Precision Tech Insights. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-in');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('section').forEach(section => {
-                observer.observe(section);
-            });
-            // Mobile menu toggle
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuIcon = document.getElementById('menuIcon');
+    <!-- AI Chatbot -->
+    <div id="chatbot-container" style="position: fixed; bottom: 28px; right: 28px; z-index: 9999;">
+        <button id="chat-toggle" style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(102,126,234,0.4); transition: transform 0.3s; border: none; cursor: pointer; font-size: 22px;">
+            💬
+        </button>
+        
+        <div id="chat-window" style="display: none; position: absolute; bottom: 70px; right: 0; width: 350px; height: 500px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <div style="font-weight: 600; font-size: 16px;">Precision Tech AI</div>
+                    <div style="font-size: 12px; opacity: 0.9;">Ask me anything!</div>
+                </div>
+                <button id="chat-close" style="background: rgba(255,255,255,0.2); border: none; color: white; width: 28px; height: 28px; border-radius: 50%; cursor: pointer;">✕</button>
+            </div>
             
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                    if (mobileMenu.classList.contains('hidden')) {
-                        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-                    } else {
-                        menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-                    }
-                });
-            }
-        });
-    </script>
-<!-- AI Chatbot -->
-</body>
-<!-- AI Chatbot - Add this before </body> tag on all pages -->
-<div id="chatbot-container" style="position: fixed; bottom: 28px; right: 28px; z-index: 9999;">
-    <button id="chat-toggle" style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(102,126,234,0.4); transition: transform 0.3s; border: none; cursor: pointer; font-size: 22px;">
-        💬
-    </button>
-    
-    <div id="chat-window" style="display: none; position: absolute; bottom: 70px; right: 0; width: 350px; height: 500px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden;">
-        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-                <div style="font-weight: 600; font-size: 16px;">Precision Tech AI</div>
-                <div style="font-size: 12px; opacity: 0.9;">Ask me anything!</div>
+            <div id="chat-messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #f8f9fa;">
+                <div style="background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px;">
+                    👋 Hi! I'm the Precision Tech AI assistant. Ask me about our services, projects, or how we can help you!
+                </div>
             </div>
-            <button id="chat-close" style="background: rgba(255,255,255,0.2); border: none; color: white; width: 28px; height: 28px; border-radius: 50%; cursor: pointer;">✕</button>
-        </div>
-        
-        <div id="chat-messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #f8f9fa;">
-            <div style="background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px;">
-                👋 Hi! I'm the Precision Tech AI assistant. Ask me about our services, projects, or how we can help you!
+            
+            <div style="padding: 16px; border-top: 1px solid #e9ecef; background: white;">
+                <form id="chat-form" style="display: flex; gap: 8px;">
+                    <input type="text" id="chat-input" placeholder="Type your message..." style="flex: 1; padding: 10px 14px; border: 1px solid #dee2e6; border-radius: 8px; font-size: 14px;" required>
+                    <button type="submit" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600;">Send</button>
+                </form>
             </div>
-        </div>
-        
-        <div style="padding: 16px; border-top: 1px solid #e9ecef; background: white;">
-            <form id="chat-form" style="display: flex; gap: 8px;">
-                <input type="text" id="chat-input" placeholder="Type your message..." style="flex: 1; padding: 10px 14px; border: 1px solid #dee2e6; border-radius: 8px; font-size: 14px;" required>
-                <button type="submit" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600;">Send</button>
-            </form>
         </div>
     </div>
-</div>
 
-<script>
-const chatToggle = document.getElementById('chat-toggle');
-const chatWindow = document.getElementById('chat-window');
-const chatClose = document.getElementById('chat-close');
-const chatForm = document.getElementById('chat-form');
-const chatInput = document.getElementById('chat-input');
-const chatMessages = document.getElementById('chat-messages');
-let conversationHistory = [];
+    <script>
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatWindow = document.getElementById('chat-window');
+    const chatClose = document.getElementById('chat-close');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+    let conversationHistory = [];
 
-chatToggle.addEventListener('click', () => {
-    chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
-});
+    chatToggle.addEventListener('click', () => {
+        chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
+    });
 
-chatClose.addEventListener('click', () => {
-    chatWindow.style.display = 'none';
-});
+    chatClose.addEventListener('click', () => {
+        chatWindow.style.display = 'none';
+    });
 
-chatForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const message = chatInput.value.trim();
-    if (!message) return;
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const message = chatInput.value.trim();
+        if (!message) return;
 
-    const userMsg = document.createElement('div');
-    userMsg.style.cssText = 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px; border-radius: 12px; font-size: 14px; align-self: flex-end; max-width: 80%;';
-    userMsg.textContent = message;
-    chatMessages.appendChild(userMsg);
-    chatInput.value = '';
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+        const userMsg = document.createElement('div');
+        userMsg.style.cssText = 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px; border-radius: 12px; font-size: 14px; align-self: flex-end; max-width: 80%;';
+        userMsg.textContent = message;
+        chatMessages.appendChild(userMsg);
+        chatInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    const typing = document.createElement('div');
-    typing.id = 'typing';
-    typing.style.cssText = 'background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px;';
-    typing.textContent = 'Typing...';
-    chatMessages.appendChild(typing);
+        const typing = document.createElement('div');
+        typing.id = 'typing';
+        typing.style.cssText = 'background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px;';
+        typing.textContent = 'Typing...';
+        chatMessages.appendChild(typing);
 
-    try {
-        const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message, conversationHistory })
-        });
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message, conversationHistory })
+            });
 
-        const data = await response.json();
-        typing.remove();
+            const data = await response.json();
+            typing.remove();
 
-        if (data.success) {
-            const botMsg = document.createElement('div');
-            botMsg.style.cssText = 'background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px; max-width: 80%;';
-            botMsg.textContent = data.response;
-            chatMessages.appendChild(botMsg);
-            
-            conversationHistory.push(
-                { role: 'user', content: message },
-                { role: 'assistant', content: data.response }
-            );
+            if (data.success) {
+                const botMsg = document.createElement('div');
+                botMsg.style.cssText = 'background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px; max-width: 80%;';
+                botMsg.textContent = data.response;
+                chatMessages.appendChild(botMsg);
+                
+                conversationHistory.push(
+                    { role: 'user', content: message },
+                    { role: 'assistant', content: data.response }
+                );
+            }
+        } catch (error) {
+            typing.remove();
+            const errorMsg = document.createElement('div');
+            errorMsg.style.cssText = 'background: #fee; padding: 12px; border-radius: 12px; font-size: 14px;';
+            errorMsg.textContent = 'Error. Please try again.';
+            chatMessages.appendChild(errorMsg);
         }
-    } catch (error) {
-        typing.remove();
-        const errorMsg = document.createElement('div');
-        errorMsg.style.cssText = 'background: #fee; padding: 12px; border-radius: 12px; font-size: 14px;';
-        errorMsg.textContent = 'Error. Please try again.';
-        chatMessages.appendChild(errorMsg);
-    }
-    
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-});
-</script>
+        
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    });
+    </script>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
 </html>
