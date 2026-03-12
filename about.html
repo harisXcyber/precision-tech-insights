@@ -72,41 +72,15 @@
 </head>
 <body class="bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="bg-secondary/95 backdrop-blur-md text-white fixed w-full z-50 shadow-lg">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <img src="/company_logo.png" alt="Precision Tech Insights" class="w-10 h-10 rounded-full">
-                    <div class="text-xl font-bold">
-                        <span class="gradient-text">Precision Tech Insights</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="/" class="hover:text-accent transition-colors">Home</a>
-                    <a href="/about" class="text-accent font-semibold transition-colors">About</a>
-                    <a href="/contact" class="hover:text-accent transition-colors">Contact</a>
-                    <a href="/whats-next" class="hover:text-accent transition-colors">What's Next</a>
-                    <a href="https://itovio.com" target="_blank" class="bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-bold px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                        Itovio <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full">NEW</span>
-                    </a>
-                                <button id="mobileMenuBtn" class="md:hidden focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-                <a href="/" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Home</a>
-                <a href="/about" class="block text-accent font-semibold py-2 px-4 rounded hover:bg-accent/10 transition-colors">About</a>
-                <a href="/contact" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Contact</a>
-                <a href="/whats-next" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">What's Next</a>
-                <a href="https://itovio.com" target="_blank" class="block bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center">
-                    Itovio <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full ml-2">NEW</span>
-                </a>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -124,14 +98,14 @@
             <div class="max-w-6xl mx-auto">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-left">
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl text-center transform hover:scale-105 transition-all duration-300">
+                        <a href="https://harishere.com" target="_blank" class="block bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl text-center transform hover:scale-105 transition-all duration-300 cursor-pointer">
                             <img src="/about-profile.jpg" alt="Muhammad Haris" class="w-48 h-48 rounded-full mx-auto mb-6 object-cover border-4 border-accent shadow-lg hover:shadow-2xl transition-all duration-300">
                             <h3 class="text-3xl font-bold mb-2">Muhammad Haris</h3>
                             <p class="text-accent font-semibold text-lg mb-4">CEO & Founder</p>
                             <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-all duration-300">
                                 <p class="text-gray-600">Security researcher, developer, and entrepreneur with a passion for innovative technology solutions that make a real difference.</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="animate-slide-right">
                         <h2 class="text-4xl font-bold mb-6 text-primary">Our Founder's Vision</h2>
@@ -173,7 +147,7 @@
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div class="animate-slide-up">
                         <div class="bg-white p-8 rounded-xl shadow-lg h-full">
-                            <div class="text-4xl mb-6">🎯</div>
+                            <div class="text-4xl mb-6"><svg class="w-12 h-12 text-blue-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                             <h3 class="text-3xl font-bold mb-6 text-primary">Our Mission</h3>
                             <p class="text-lg text-gray-600 mb-6">
                                 "From Code to Intelligence — We Deliver Precision"
@@ -186,7 +160,7 @@
                     
                     <div class="animate-slide-up">
                         <div class="bg-white p-8 rounded-xl shadow-lg h-full">
-                            <div class="text-4xl mb-6">🚀</div>
+                            <div class="text-4xl mb-6"><svg class="w-12 h-12 text-blue-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
                             <h3 class="text-3xl font-bold mb-6 text-primary">Our Vision</h3>
                             <p class="text-lg text-gray-600 mb-6">
                                 To become the leading technology partner for businesses worldwide
@@ -221,7 +195,7 @@
                     
                     <div class="text-center animate-fade-in">
                         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-2xl">🔒</span>
+                            <span class="text-2xl"><svg class="w-8 h-8 text-red-600 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></span>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-green-600">Security</h3>
                         <p class="text-gray-600">Security isn't an afterthought—it's built into every solution from the ground up.</p>
@@ -229,7 +203,7 @@
                     
                     <div class="text-center animate-fade-in">
                         <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-2xl">💡</span>
+                            <span class="text-2xl"><svg class="w-8 h-8 text-yellow-600 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></span>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-purple-600">Innovation</h3>
                         <p class="text-gray-600">We stay ahead of technology trends to deliver cutting-edge solutions that future-proof your business.</p>
@@ -258,7 +232,7 @@
                 
                 <div class="grid lg:grid-cols-3 gap-8">
                     <div class="bg-white p-8 rounded-xl shadow-lg animate-slide-up">
-                        <div class="text-3xl mb-4">🌐</div>
+                        <div class="text-3xl mb-4"><svg class="w-10 h-10 text-blue-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg></div>
                         <h3 class="text-2xl font-bold mb-4 text-blue-600">Current: Direct Services</h3>
                         <p class="text-gray-600 mb-4">
                             We currently operate through direct client engagement via our website and social media channels, providing personalized service and building strong relationships.
@@ -271,7 +245,7 @@
                     </div>
                     
                     <div class="bg-white p-8 rounded-xl shadow-lg animate-slide-up">
-                        <div class="text-3xl mb-4">📊</div>
+                        <div class="text-3xl mb-4"><svg class="w-10 h-10 text-green-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
                         <h3 class="text-2xl font-bold mb-4 text-green-600">Growth: Client Portal</h3>
                         <p class="text-gray-600 mb-4">
                             We're developing a comprehensive client management portal to streamline project tracking, communication, and service delivery.
@@ -284,7 +258,7 @@
                     </div>
                     
                     <div class="bg-white p-8 rounded-xl shadow-lg animate-slide-up">
-                        <div class="text-3xl mb-4">🚀</div>
+                        <div class="text-3xl mb-4"><svg class="w-12 h-12 text-blue-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
                         <h3 class="text-2xl font-bold mb-4 text-purple-600">Future: Precision Platform</h3>
                         <p class="text-gray-600 mb-4">
                             Our vision includes a SaaS marketplace where businesses can access our tools, templates, and automated solutions.
@@ -300,47 +274,111 @@
         </div>
     </section>
 
-    <!-- Five Divisions -->
+    <!-- Itovio Services -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4 gradient-text">Our Five Core Divisions</h2>
-                    <p class="text-xl text-gray-600">Specialized expertise across technology domains</p>
+                    <h2 class="text-4xl font-bold mb-4 gradient-text">Our Services via Itovio</h2>
+                    <p class="text-xl text-gray-600">9 comprehensive digital services delivered through our platform</p>
                 </div>
                 
-                <div class="space-y-8">
-                    <div class="grid lg:grid-cols-5 gap-6">
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-xl text-center animate-fade-in">
-                            <div class="text-3xl mb-3">💻</div>
-                            <h3 class="font-bold text-primary">Web Development</h3>
-                            <p class="text-sm text-gray-600 mt-2">MERN, Django, Laravel, React, Next.js</p>
-                        </div>
-                        
-                        <div class="bg-gradient-to-br from-red-50 to-pink-100 p-6 rounded-xl text-center animate-fade-in">
-                            <div class="text-3xl mb-3">🔒</div>
-                            <h3 class="font-bold text-red-600">Cybersecurity</h3>
-                            <p class="text-sm text-gray-600 mt-2">Penetration testing, security audits, ethical hacking</p>
-                        </div>
-                        
-                        <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl text-center animate-fade-in">
-                            <div class="text-3xl mb-3">📊</div>
-                            <h3 class="font-bold text-green-600">Data Science</h3>
-                            <p class="text-sm text-gray-600 mt-2">Analytics, visualization, automation, dashboards</p>
-                        </div>
-                        
-                        <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-6 rounded-xl text-center animate-fade-in">
-                            <div class="text-3xl mb-3">🤖</div>
-                            <h3 class="font-bold text-purple-600">AI & Automation</h3>
-                            <p class="text-sm text-gray-600 mt-2">Chatbots, NLP, process automation, smart systems</p>
-                        </div>
-                        
-                        <div class="bg-gradient-to-br from-yellow-50 to-orange-100 p-6 rounded-xl text-center animate-fade-in">
-                            <div class="text-3xl mb-3">🎨</div>
-                            <h3 class="font-bold text-orange-600">Content Creation</h3>
-                            <p class="text-sm text-gray-600 mt-2">Branding, video content, social media assets</p>
-                        </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Web Development -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-blue-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                        <h3 class="font-bold text-blue-600 text-lg mb-2">Web Development</h3>
+                        <p class="text-sm text-gray-600">Professional websites from landing pages to enterprise platforms</p>
+                        <a href="https://itovio.com/services/web" target="_blank" class="text-blue-500 text-sm font-semibold mt-2 inline-block hover:text-blue-700">View Packages →</a>
                     </div>
+                    
+                    <!-- Mobile App Development -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-purple-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        <h3 class="font-bold text-purple-600 text-lg mb-2">Mobile App Development</h3>
+                        <p class="text-sm text-gray-600">Native mobile applications for iOS and Android</p>
+                        <a href="https://itovio.com/services/mobile" target="_blank" class="text-purple-500 text-sm font-semibold mt-2 inline-block hover:text-purple-700">View Packages →</a>
+                    </div>
+                    
+                    <!-- AI Chatbot -->
+                    <div class="bg-gradient-to-br from-cyan-50 to-blue-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-cyan-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                        </svg>
+                        <h3 class="font-bold text-cyan-600 text-lg mb-2">AI Chatbot</h3>
+                        <p class="text-sm text-gray-600">Intelligent chatbots powered by AI</p>
+                        <a href="https://itovio.com/services/ai" target="_blank" class="text-cyan-500 text-sm font-semibold mt-2 inline-block hover:text-cyan-700">View Packages →</a>
+                    </div>
+                    
+                    <!-- UI/UX Design -->
+                    <div class="bg-gradient-to-br from-pink-50 to-rose-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-pink-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                        <h3 class="font-bold text-pink-600 text-lg mb-2">UI/UX Design</h3>
+                        <p class="text-sm text-gray-600">User interface and experience design services</p>
+                        <a href="https://itovio.com/services/design" target="_blank" class="text-pink-500 text-sm font-semibold mt-2 inline-block hover:text-pink-700">View Packages →</a>
+                    </div>
+                    
+                    <!-- Digital Marketing -->
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-green-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                        <h3 class="font-bold text-green-600 text-lg mb-2">Digital Marketing</h3>
+                        <p class="text-sm text-gray-600">SEO, social media, and content marketing</p>
+                        <a href="https://itovio.com/services/marketing" target="_blank" class="text-green-500 text-sm font-semibold mt-2 inline-block hover:text-green-700">View Packages →</a>
+                    </div>
+                    
+                    <!-- Graphic Design -->
+                    <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-orange-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <h3 class="font-bold text-orange-600 text-lg mb-2">Graphic Design</h3>
+                        <p class="text-sm text-gray-600">Branding, logos, and visual identity</p>
+                        <a href="https://itovio.com/services/graphics" target="_blank" class="text-orange-500 text-sm font-semibold mt-2 inline-block hover:text-orange-700">View Packages →</a>
+                    </div>
+                    
+                    <!-- Content Writing -->
+                    <div class="bg-gradient-to-br from-indigo-50 to-purple-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-indigo-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                        <h3 class="font-bold text-indigo-600 text-lg mb-2">Content Writing</h3>
+                        <p class="text-sm text-gray-600">Professional copywriting and content creation</p>
+                        <a href="https://itovio.com/services/content" target="_blank" class="text-indigo-500 text-sm font-semibold mt-2 inline-block hover:text-indigo-700">View Packages →</a>
+                    </div>
+                    
+                    <!-- IT Consultancy -->
+                    <div class="bg-gradient-to-br from-teal-50 to-cyan-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-teal-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        <h3 class="font-bold text-teal-600 text-lg mb-2">IT Consultancy</h3>
+                        <p class="text-sm text-gray-600">Technical consulting and strategy</p>
+                        <a href="https://itovio.com/services/consulting" target="_blank" class="text-teal-500 text-sm font-semibold mt-2 inline-block hover:text-teal-700">View Packages →</a>
+                    </div>
+                    
+                    <!-- ERP & Enterprise -->
+                    <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <svg class="w-10 h-10 text-slate-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                        <h3 class="font-bold text-slate-600 text-lg mb-2">ERP & Enterprise</h3>
+                        <p class="text-sm text-gray-600">Enterprise resource planning and B2B platforms</p>
+                        <a href="https://itovio.com/services/enterprise" target="_blank" class="text-slate-500 text-sm font-semibold mt-2 inline-block hover:text-slate-700">View Packages →</a>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="https://itovio.com" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Explore All Services on Itovio →
+                    </a>
                 </div>
             </div>
         </div>
@@ -357,7 +395,7 @@
                 <a href="/contact" class="bg-accent hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                     Start Your Project
                 </a>
-                <a href="/services" class="border-2 border-white text-white hover:bg-white hover:text-secondary px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                <a href="https://itovio.com/services" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-secondary px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                     View Our Services
                 </a>
             </div>
@@ -378,10 +416,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="/services#web" class="hover:text-white transition-colors">Web Development</a></li>
-                        <li><a href="/services#security" class="hover:text-white transition-colors">Cybersecurity</a></li>
-                        <li><a href="/services#data" class="hover:text-white transition-colors">Data Science</a></li>
-                        <li><a href="/services#ai" class="hover:text-white transition-colors">AI & Automation</a></li>
+                        <li><a href="https://itovio.com/services" class="hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="https://itovio.com/services" class="hover:text-white transition-colors">Cybersecurity</a></li>
+                        <li><a href="https://itovio.com/services" class="hover:text-white transition-colors">Data Science</a></li>
+                        <li><a href="https://itovio.com/services" class="hover:text-white transition-colors">AI & Automation</a></li>
                     </ul>
                 </div>
                 <div>
@@ -389,14 +427,14 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
                         <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="/whats-next" class="hover:text-white transition-colors">What's Next</a></li>
+                        <li><a href="/our-solutions" class="hover:text-white transition-colors">Our Solutions</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Connect</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>📱 +92 348 1383350</li>
-                        <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">💼 LinkedIn</a></li>
+                        <li>Phone: +92 348 1383350</li>
+                        <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">LinkedIn: LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -446,7 +484,7 @@
 <!-- AI Chatbot - Add this before </body> tag on all pages -->
 <div id="chatbot-container" style="position: fixed; bottom: 28px; right: 28px; z-index: 9999;">
     <button id="chat-toggle" style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(102,126,234,0.4); transition: transform 0.3s; border: none; cursor: pointer; font-size: 22px;">
-        💬
+        Chat
     </button>
     
     <div id="chat-window" style="display: none; position: absolute; bottom: 70px; right: 0; width: 350px; height: 500px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden;">
@@ -460,7 +498,7 @@
         
         <div id="chat-messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #f8f9fa;">
             <div style="background: #e9ecef; padding: 12px; border-radius: 12px; font-size: 14px;">
-                👋 Hi! I'm the Precision Tech AI assistant. Ask me about our services, projects, or how we can help you!
+                Hi! Hi! I'm the Precision Tech AI assistant. Ask me about our services, projects, or how we can help you!
             </div>
         </div>
         

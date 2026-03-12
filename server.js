@@ -231,16 +231,24 @@ app.get('/services', (req, res) => {
     res.sendFile(path.join(__dirname, 'services.html'));
 });
 
+app.get('/navbar.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'navbar.html'));
+});
+
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'about.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'about.html'));
 });
 
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'contact.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'contact.html'));
 });
 
 app.get('/whats-next', (req, res) => {
     res.sendFile(path.join(__dirname, 'whats-next.html'));
+});
+
+app.get('/our-solutions', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'our-solutions.html'));
 });
 
 // Fallback for any other routes
@@ -259,7 +267,7 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
-    console.log(`🚀 Precision Tech Insights website running on http://localhost:${PORT}`);
-    console.log('📧 Contact form submissions will be emailed to ${process.env.SMTP_USER}');
-    console.log('📍 API endpoint: /api/contact');
+    console.log(`Precision Tech Insights website running on http://localhost:${PORT}`);
+    console.log(`Contact form submissions will be emailed to ${process.env.SMTP_USER}`);
+    console.log(`API endpoint: /api/contact`);
 });

@@ -71,40 +71,16 @@
 </head>
 <body class="bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="bg-secondary/95 backdrop-blur-md text-white fixed w-full z-50 shadow-lg">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <img src="/company_logo.png" alt="Precision Tech Insights" class="w-10 h-10 rounded-full">
-                    <div class="text-xl font-bold">
-                        <span class="gradient-text">Precision Tech Insights</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="/" class="hover:text-accent transition-colors">Home</a>
-                    <a href="/about" class="hover:text-accent transition-colors">About</a>
-                    <a href="/contact" class="text-accent font-semibold transition-colors">Contact</a>
-                    <a href="/whats-next" class="hover:text-accent transition-colors">What's Next</a>
-                    <a href="https://itovio.com" target="_blank" class="bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-bold px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                        Itovio <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full">NEW</span>
-                    </a>
-                                <button id="mobileMenuBtn" class="md:hidden focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-                <a href="/" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">Home</a>
-                <a href="/about" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">About</a>
-                <a href="/contact" class="block text-accent font-semibold py-2 px-4 rounded hover:bg-accent/10 transition-colors">Contact</a>
-                <a href="/whats-next" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors">What's Next</a>
-                <a href="https://itovio.com" target="_blank" class="block bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center">
-                    Itovio <span class="text-xs bg-yellow-400 text-black px-2 py-0.5 rounded-full ml-2">NEW</span>
-                </a>
-            </div>
-        </div>
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
     </nav>
 
     <!-- Hero Section -->
@@ -215,7 +191,7 @@
                             <div class="space-y-6">
                                 <div class="flex items-start space-x-4 p-4 bg-green-50 rounded-lg animate-slide-up hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                                     <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0 animate-bounce-slow">
-                                        <span class="text-xl text-white">📱</span>
+                                        <span class="text-xl text-white">Phone:</span>
                                     </div>
                                     <div>
                                         <p class="font-semibold text-lg">WhatsApp</p>
@@ -226,7 +202,7 @@
                                 
                                 <div class="flex items-start space-x-4 p-4 bg-blue-50 rounded-lg animate-slide-up hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                                     <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 animate-bounce-slow">
-                                        <span class="text-xl text-white">💼</span>
+                                        <span class="text-xl text-white">LinkedIn:</span>
                                     </div>
                                     <div>
                                         <p class="font-semibold text-lg">LinkedIn</p>
@@ -237,7 +213,7 @@
                                 
                                 <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg animate-slide-up hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                                     <div class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <span class="text-xl text-white">🌍</span>
+                                        <span class="text-xl text-white">Location:</span>
                                     </div>
                                     <div>
                                         <p class="font-semibold text-lg">Location</p>
@@ -325,10 +301,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="/services#web" class="hover:text-white transition-colors">Web Development</a></li>
-                        <li><a href="/services#security" class="hover:text-white transition-colors">Cybersecurity</a></li>
-                        <li><a href="/services#data" class="hover:text-white transition-colors">Data Science</a></li>
-                        <li><a href="/services#ai" class="hover:text-white transition-colors">AI & Automation</a></li>
+                        <li><a href="https://itovio.com/services" class="hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="https://itovio.com/services" class="hover:text-white transition-colors">Cybersecurity</a></li>
+                        <li><a href="https://itovio.com/services" class="hover:text-white transition-colors">Data Science</a></li>
+                        <li><a href="https://itovio.com/services" class="hover:text-white transition-colors">AI & Automation</a></li>
                     </ul>
                 </div>
                 <div>
@@ -336,14 +312,14 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
                         <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="/whats-next" class="hover:text-white transition-colors">What's Next</a></li>
+                        <li><a href="/our-solutions" class="hover:text-white transition-colors">Our Solutions</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Connect</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>📱 +92 348 1383350</li>
-                        <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">💼 LinkedIn</a></li>
+                        <li>Phone: +92 348 1383350</li>
+                        <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">LinkedIn: LinkedIn</a></li>
                     </ul>
                 </div>
             </div>

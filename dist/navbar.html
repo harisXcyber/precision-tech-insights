@@ -1,0 +1,58 @@
+<nav class="bg-secondary/95 backdrop-blur-md text-white fixed w-full z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="/company_logo.png" alt="Precision Tech Insights" class="w-10 h-10 rounded-full">
+                <div class="text-xl font-bold">
+                    <span class="gradient-text">Precision Tech Insights</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="/" class="hover:text-accent transition-colors" id="nav-home">Home</a>
+                <a href="/about" class="hover:text-accent transition-colors" id="nav-about">About</a>
+                <a href="/contact" class="hover:text-accent transition-colors" id="nav-contact">Contact</a>
+                <a href="/our-solutions" class="hover:text-accent transition-colors" id="nav-solutions">Our Solutions</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+            <a href="/" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors" id="nav-mobile-home">Home</a>
+            <a href="/about" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors" id="nav-mobile-about">About</a>
+            <a href="/contact" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors" id="nav-mobile-contact">Contact</a>
+            <a href="/our-solutions" class="block py-2 px-4 rounded hover:bg-accent/10 transition-colors" id="nav-mobile-solutions">Our Solutions</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    });
+
+    // Set active nav link based on current page
+    const currentPath = window.location.pathname;
+    const navMap = {
+        '/': ['nav-home', 'nav-mobile-home'],
+        '/about': ['nav-about', 'nav-mobile-about'],
+        '/contact': ['nav-contact', 'nav-mobile-contact'],
+        '/our-solutions': ['nav-solutions', 'nav-mobile-solutions']
+    };
+
+    Object.keys(navMap).forEach(path => {
+        if (currentPath === path || currentPath === path + '.html') {
+            navMap[path].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.classList.add('text-accent', 'font-semibold');
+                }
+            });
+        }
+    });
+</script>

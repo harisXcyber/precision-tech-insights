@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Solutions - Precision Tech Insights</title>
+    <meta name="description" content="Explore our solutions: Itovio services platform, PrecisionFlow AI content creator, and upcoming Precision Tech Academy.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#0f172a',
+                        accent: '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Our Solutions</h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Comprehensive digital solutions powered by Precision Tech Insights
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itovio Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <div class="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                            LIVE - 2026
+                        </div>
+                        <h2 class="text-4xl font-bold mb-6 gradient-text">Itovio</h2>
+                        <p class="text-xl text-gray-600 mb-6">
+                            Our comprehensive services platform offering 9 core digital services with fixed packages and custom solutions.
+                        </p>
+                        <p class="text-gray-600 mb-8">
+                            From web development to enterprise solutions, Itovio provides professional digital services with transparent pricing and expert delivery.
+                        </p>
+                        <a href="https://itovio.com" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
+                            Visit Itovio.com →
+                        </a>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Services Offered</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <svg class="w-8 h-8 text-blue-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                </svg>
+                                <p class="font-semibold text-sm">Web Development</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <svg class="w-8 h-8 text-purple-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                </svg>
+                                <p class="font-semibold text-sm">Mobile Apps</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <svg class="w-8 h-8 text-cyan-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                                </svg>
+                                <p class="font-semibold text-sm">AI Chatbot</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <svg class="w-8 h-8 text-pink-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                                </svg>
+                                <p class="font-semibold text-sm">UI/UX Design</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <svg class="w-8 h-8 text-green-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                </svg>
+                                <p class="font-semibold text-sm">Marketing</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <p class="text-gray-600 text-sm font-semibold">+ 4 More Services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PrecisionFlow Section -->
+    <section class="py-20 bg-gradient-to-br from-yellow-50 to-amber-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="bg-white p-8 rounded-2xl shadow-xl">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">Key Features</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-600">AI-powered content generation for crypto markets</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-600">Professional content for Binance Square</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-600">Automated posting and scheduling</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-600">Starting at $299/month</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="inline-block bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                            LIVE - AI AGENT
+                        </div>
+                        <h2 class="text-4xl font-bold mb-6 text-yellow-700">PrecisionFlow.io</h2>
+                        <p class="text-xl text-gray-700 mb-6">
+                            Our AI-powered content creator agent specializing in cryptocurrency content for Binance Square.
+                        </p>
+                        <p class="text-gray-600 mb-8">
+                            PrecisionFlow automates professional crypto content creation, helping creators and businesses maintain consistent, high-quality presence on Binance Square.
+                        </p>
+                        <a href="https://precisionflow.io" target="_blank" class="inline-block bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
+                            Visit PrecisionFlow.io →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precision Tech Academy Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-block bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        COMING SOON - 2027
+                    </div>
+                    <h2 class="text-4xl font-bold mb-6 gradient-text">Precision Tech Academy</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Our upcoming educational platform to train the next generation of tech professionals in Pakistan and beyond.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl shadow-lg">
+                        <svg class="w-12 h-12 text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Comprehensive Courses</h3>
+                        <p class="text-gray-600">Web development, AI, cybersecurity, and data science programs</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-xl shadow-lg">
+                        <svg class="w-12 h-12 text-green-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Expert Instructors</h3>
+                        <p class="text-gray-600">Learn from industry professionals with real-world experience</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-100 p-8 rounded-xl shadow-lg">
+                        <svg class="w-12 h-12 text-purple-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Industry Certifications</h3>
+                        <p class="text-gray-600">Recognized certifications to boost your career prospects</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <p class="text-gray-600 mb-6">Stay tuned for updates on our academy launch</p>
+                    <a href="/contact" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
+                        Get Notified →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/company_logo.png" alt="Precision Tech Insights" class="w-8 h-8 rounded-full">
+                        <h3 class="text-xl font-bold">Precision Tech Insights</h3>
+                    </div>
+                    <p class="text-gray-400">From Code to Intelligence — We Deliver Precision</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://itovio.com" target="_blank" class="hover:text-white transition-colors">Itovio Platform</a></li>
+                        <li><a href="https://precisionflow.io" target="_blank" class="hover:text-white transition-colors">PrecisionFlow AI</a></li>
+                        <li><a href="/our-solutions" class="hover:text-white transition-colors">All Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Phone: +92 348 1383350</li>
+                        <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">LinkedIn</a></li>
+                        <li><a href="mailto:contact@precisiontechinsights.com" class="hover:text-white transition-colors">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Precision Tech Insights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
