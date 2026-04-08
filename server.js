@@ -98,6 +98,9 @@ app.use('/favicon.ico', express.static('favicon.ico'));
 app.use('/muhammad-haris.jpg', express.static('muhammad-haris.jpg'));
 app.use('/home-profile.jpg', express.static('home-profile.jpg'));
 app.use('/about-profile.jpg', express.static('about-profile.jpg'));
+app.use('/components.js', express.static('components.js'));
+app.use('/footer.html', express.static('footer.html'));
+app.use('/chatbot.html', express.static('chatbot.html'));
 
 // Email configuration
 const transporter = nodemailer.createTransport({
@@ -252,6 +255,10 @@ app.get('/our-solutions', (req, res) => {
 });
 
 // Fallback for any other routes
+app.get('/preciseportfolio', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'preciseportfolio.html'));
+});
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });

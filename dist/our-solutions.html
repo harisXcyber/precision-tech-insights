@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Solutions - Precision Tech Insights</title>
-    <meta name="description" content="Explore our solutions: Itovio services platform, PrecisionFlow AI content creator, and upcoming Precision Tech Academy.">
+    <title>Our Solutions | Precise Portfolio, Itovio, PrecisionFlow — Precision Tech Insights</title>
+    <meta name="keywords" content="Precise Portfolio, Itovio, PrecisionFlow, AI tools Pakistan, SaaS products Karachi, portfolio generator" />
+  <meta name="description" content="Explore Precision Tech Insights solutions: Precise Portfolio (AI portfolio generator), Itovio (IT services), and PrecisionFlow (AI automation). Based in Karachi." />
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,6 +30,36 @@
             background-clip: text;
         }
     </style>
+    <script src="/components.js" defer></script>
+  <link rel="canonical" href="https://precisiontechinsights.com/our-solutions" />
+  <meta property="og:description" content="Explore Precision Tech Insights solutions: Precise Portfolio (AI portfolio generator), Itovio (IT services), and PrecisionFlow (AI automation). Based in Karachi." />
+  <style>
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease}
+    .reveal.revealed{opacity:1;transform:translateY(0)}
+    .reveal-left{opacity:0;transform:translateX(-30px);transition:opacity 0.6s ease,transform 0.6s ease}
+    .reveal-left.revealed{opacity:1;transform:translateX(0)}
+    .reveal-right{opacity:0;transform:translateX(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+    .reveal-right.revealed{opacity:1;transform:translateX(0)}
+    .card-hover{transition:transform 0.3s ease,box-shadow 0.3s ease}
+    .card-hover:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(0,0,0,0.08)}
+    .delay-1{transition-delay:0.1s}.delay-2{transition-delay:0.2s}.delay-3{transition-delay:0.3s}
+    .delay-4{transition-delay:0.4s}.delay-5{transition-delay:0.5s}
+    .scale-in{opacity:0;transform:scale(0.94);transition:opacity 0.5s ease,transform 0.5s ease}
+    .scale-in.revealed{opacity:1;transform:scale(1)}
+    .hero-text-1{opacity:0;transform:translateY(20px);animation:heroIn 0.7s ease forwards 0.2s}
+    .hero-text-2{opacity:0;transform:translateY(20px);animation:heroIn 0.7s ease forwards 0.4s}
+    .hero-text-3{opacity:0;transform:translateY(20px);animation:heroIn 0.7s ease forwards 0.6s}
+    .hero-text-4{opacity:0;transform:translateY(20px);animation:heroIn 0.7s ease forwards 0.8s}
+    @keyframes heroIn{to{opacity:1;transform:translateY(0)}}
+    .section-line{width:0;height:3px;background:linear-gradient(90deg,#3b82f6,#6366f1);transition:width 0.8s ease;border-radius:2px}
+    .section-line.revealed{width:60px}
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target);}});},{threshold:0.1});
+      document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.scale-in,.section-line').forEach(el=>obs.observe(el));
+    });
+  </script>
 </head>
 <body class="bg-white text-gray-900">
     <!-- Navigation -->
@@ -77,37 +108,37 @@
                     <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-xl">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Services Offered</h3>
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="bg-white p-4 rounded-lg shadow reveal delay-1">
                                 <svg class="w-8 h-8 text-blue-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                                 </svg>
                                 <p class="font-semibold text-sm">Web Development</p>
                             </div>
-                            <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="bg-white p-4 rounded-lg shadow reveal delay-2">
                                 <svg class="w-8 h-8 text-purple-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                 </svg>
                                 <p class="font-semibold text-sm">Mobile Apps</p>
                             </div>
-                            <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="bg-white p-4 rounded-lg shadow reveal delay-3">
                                 <svg class="w-8 h-8 text-cyan-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                                 </svg>
                                 <p class="font-semibold text-sm">AI Chatbot</p>
                             </div>
-                            <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="bg-white p-4 rounded-lg shadow reveal delay-4">
                                 <svg class="w-8 h-8 text-pink-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
                                 </svg>
                                 <p class="font-semibold text-sm">UI/UX Design</p>
                             </div>
-                            <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="bg-white p-4 rounded-lg shadow reveal delay-5">
                                 <svg class="w-8 h-8 text-green-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                                 </svg>
                                 <p class="font-semibold text-sm">Marketing</p>
                             </div>
-                            <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="bg-white p-4 rounded-lg shadow reveal delay-5">
                                 <p class="text-gray-600 text-sm font-semibold">+ 4 More Services</p>
                             </div>
                         </div>
@@ -117,12 +148,133 @@
         </div>
     </section>
 
+    <!-- Precise Portfolio Section -->
+    <section class="py-24 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+
+                <!-- Header -->
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <span class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-5">
+                            <span class="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse"></span>
+                            Launched 2026 &middot; SaaS Product
+                        </span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Precise Portfolio</h2>
+            <div class="section-line mt-4"></div>
+                        <p class="text-lg text-gray-500 leading-relaxed">An AI-powered portfolio site generator that turns raw professional data into a fully deployed personal website — instantly, with no developer required.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-8 text-white">
+                        <p class="text-indigo-200 text-sm font-semibold uppercase tracking-widest mb-3">Actively Used In Production</p>
+                        <p class="text-white font-semibold text-lg mb-2">Itovio — IT Services Company</p>
+                        <p class="text-indigo-100 text-sm mb-5">Itovio, a technology services company, uses Precise Portfolio to generate portfolio websites for their clients at scale — validating the tool in a real, high-volume production environment.</p>
+                        <a href="https://portfolio.itovio.com" target="_blank" class="inline-flex items-center gap-2 bg-white text-indigo-700 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-indigo-50 transition-all">
+                            View Live Demo
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                        <a href="/preciseportfolio" class="inline-flex items-center gap-2 border border-white/30 text-white/80 hover:text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-all mt-3">Full Details &amp; Pricing &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- How it works -->
+                <div class="mb-16">
+                    <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Three Ways to Get Started</p>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="border border-gray-100 rounded-2xl p-8 card-hover reveal hover:border-indigo-200 hover:shadow-md transition-all group">
+                            <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-indigo-100 transition-colors">
+                                <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-2">Structured Form</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Fill in your name, role, education, experience, projects, and skills. The system generates a complete portfolio site from the submitted data.</p>
+                        </div>
+                        <div class="border border-gray-100 rounded-2xl p-8 card-hover reveal hover:border-purple-200 hover:shadow-md transition-all group">
+                            <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-purple-100 transition-colors">
+                                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-2">AI Chat Intake</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">An enhanced AI chatbot interviews the user in a natural conversation, extracts all relevant data, and builds the portfolio automatically — no form filling required.</p>
+                        </div>
+                        <div class="border border-gray-100 rounded-2xl p-8 card-hover reveal hover:border-pink-200 hover:shadow-md transition-all group">
+                            <div class="w-10 h-10 bg-pink-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-pink-100 transition-colors">
+                                <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-2">Resume Upload</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Upload a PDF resume and the AI parses it instantly — extracting all professional data and generating a portfolio site without any manual input.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features + Pricing -->
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Built for Businesses at Scale</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Precise Portfolio is a white-label SaaS tool designed for businesses that need to generate professional portfolio websites for a large audience — instantly and consistently.</p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">Whether you are a staffing agency, university, HR platform, or freelance marketplace — rent the engine and deploy it under your brand.</p>
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">&#10003;</span>
+                                <p class="text-gray-700 text-sm">Instant portfolio generation — no developer needed</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">&#10003;</span>
+                                <p class="text-gray-700 text-sm">Three intake modes — form, AI chat, and resume upload</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">&#10003;</span>
+                                <p class="text-gray-700 text-sm">White-label ready — deploy under your own brand</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">&#10003;</span>
+                                <p class="text-gray-700 text-sm">Custom tool development available from Precision Tech Insights</p>
+                            </div>
+                        </div>
+                        <a href="/contact" class="inline-flex items-center gap-2 border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white font-semibold text-sm px-6 py-3 rounded-lg transition-all">
+                            Inquire About Custom Development
+                        </a>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Business Plans</h3>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center justify-between p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-indigo-200 hover:bg-indigo-50/30 transition-all">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Starter</p>
+                                    <p class="text-gray-500 text-sm mt-0.5">Up to 100 portfolio sites / month</p>
+                                </div>
+                                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">Popular</span>
+                            </div>
+                            <div class="flex items-center justify-between p-5 bg-indigo-50 rounded-xl border border-indigo-200 hover:shadow-sm transition-all">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Growth</p>
+                                    <p class="text-gray-500 text-sm mt-0.5">Up to 1,000 portfolio sites / month</p>
+                                </div>
+                                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">Best Value</span>
+                            </div>
+                            <div class="p-5 bg-gray-900 rounded-xl text-white">
+                                <p class="font-semibold text-white mb-1">Enterprise / Custom</p>
+                                <p class="text-gray-400 text-sm">Unlimited sites, custom integrations, white-label branding, and dedicated support. Custom tool development also available.</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4">All plans are rental-based. Free trial available for qualifying businesses.</p>
+                        <a href="https://wa.me/923481383350?text=Hi%2C%20I%27m%20interested%20in%20Precise%20Portfolio%20pricing" target="_blank"
+                           class="flex items-center justify-center gap-3 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-xl transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            WhatsApp for Pricing or Free Trial
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- PrecisionFlow Section -->
     <section class="py-20 bg-gradient-to-br from-yellow-50 to-amber-100">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 md:order-1">
+                <div class="reveal-left grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal-left order-2 md:order-1">
                         <div class="bg-white p-8 rounded-2xl shadow-xl">
                             <h3 class="text-2xl font-bold mb-6 text-gray-800">Key Features</h3>
                             <ul class="space-y-4">
@@ -224,46 +376,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="/company_logo.png" alt="Precision Tech Insights" class="w-8 h-8 rounded-full">
-                        <h3 class="text-xl font-bold">Precision Tech Insights</h3>
-                    </div>
-                    <p class="text-gray-400">From Code to Intelligence — We Deliver Precision</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://itovio.com" target="_blank" class="hover:text-white transition-colors">Itovio Platform</a></li>
-                        <li><a href="https://precisionflow.io" target="_blank" class="hover:text-white transition-colors">PrecisionFlow AI</a></li>
-                        <li><a href="/our-solutions" class="hover:text-white transition-colors">All Solutions</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Phone: +92 348 1383350</li>
-                        <li><a href="https://www.linkedin.com/company/precision-tech-insights" target="_blank" class="hover:text-white transition-colors">LinkedIn</a></li>
-                        <li><a href="mailto:contact@precisiontechinsights.com" class="hover:text-white transition-colors">Email Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2026 Precision Tech Insights. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<div id="footer-container"></div>
 
     <script>
         // Mobile menu toggle

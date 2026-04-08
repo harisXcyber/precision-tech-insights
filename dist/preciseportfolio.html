@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precise Portfolio | AI Portfolio Generator for Businesses — Precision Tech Insights</title>
+  <meta name="keywords" content="Precise Portfolio, AI portfolio generator, portfolio website generator, white label portfolio tool, SaaS portfolio Pakistan, Itovio portfolio" />
+  <meta name="description" content="Precise Portfolio: AI-powered portfolio site generator. Three intake modes (form, AI chat, resume upload). White-label, instant deployment. Free trial available. Built by Precision Tech Insights." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5MLG8Y3EH"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-J5MLG8Y3EH');</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#1e40af', secondary: '#0f172a', accent: '#3b82f6' },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'slide-up': 'slideUp 0.7s ease-out forwards',
+            'slide-left': 'slideLeft 0.7s ease-out forwards',
+            'slide-right': 'slideRight 0.7s ease-out forwards',
+            'float': 'float 4s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'bounce-slow': 'bounce 2.5s infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(48px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            slideLeft: { '0%': { opacity: '0', transform: 'translateX(-40px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+            slideRight: { '0%': { opacity: '0', transform: 'translateX(40px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+            glow: { '0%': { boxShadow: '0 0 20px rgba(99,102,241,0.3)' }, '100%': { boxShadow: '0 0 40px rgba(99,102,241,0.7)' } },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text { background: linear-gradient(135deg,#3b82f6,#1e40af); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gradient-text-purple { background: linear-gradient(135deg,#6366f1,#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .hero-grid { background-image: linear-gradient(rgba(99,102,241,0.07) 1px,transparent 1px), linear-gradient(90deg,rgba(99,102,241,0.07) 1px,transparent 1px); background-size: 40px 40px; }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    /* Typing animation */
+    .typing-cursor::after { content:'|'; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    /* Chat demo */
+    .chat-bubble { opacity:0; transform:translateY(10px); transition: opacity 0.4s ease, transform 0.4s ease; }
+    .chat-bubble.visible { opacity:1; transform:translateY(0); }
+    /* Scroll reveal */
+    .reveal { opacity:0; transform:translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.revealed { opacity:1; transform:translateY(0); }
+    /* Stagger delays */
+    .delay-100{animation-delay:0.1s} .delay-200{animation-delay:0.2s} .delay-300{animation-delay:0.3s}
+    .delay-400{animation-delay:0.4s} .delay-500{animation-delay:0.5s} .delay-600{animation-delay:0.6s}
+    /* Progress bar */
+    @keyframes progress { from{width:0} to{width:100%} }
+    .progress-bar { animation: progress 2s ease-out forwards; }
+    /* Particle dots */
+    .dot-grid { background-image: radial-gradient(circle, rgba(99,102,241,0.15) 1px, transparent 1px); background-size: 24px 24px; }
+  </style>
+  <script src="/components.js" defer></script>
+  <link rel="canonical" href="https://precisiontechinsights.com/preciseportfolio" />
+  <meta property="og:description" content="Precise Portfolio: AI-powered portfolio site generator. Three intake modes (form, AI chat, resume upload). White-label, instant deployment. Free trial available. Built by Precision Tech Insights." />
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+<div id="navbar-container"></div>
+
+<!-- HERO -->
+<section class="relative pt-32 pb-24 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 overflow-hidden hero-grid min-h-screen flex items-center">
+  <!-- Animated orbs -->
+  <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl animate-pulse-slow delay-300"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"></div>
+
+  <div class="max-w-screen-2xl mx-auto px-6 relative z-10 w-full">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left -->
+      <div>
+        <div class="inline-flex items-center gap-2 bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8 animate-fade-in">
+          <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-pulse"></span>
+          Launched 2026 &middot; SaaS Product by Precision Tech Insights
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-slide-up">
+          Precise<br /><span class="gradient-text-purple">Portfolio</span>
+        </h1>
+        <p class="text-xl text-slate-300 leading-relaxed mb-8 animate-slide-up delay-200">
+          The AI-powered portfolio site generator that turns professional data into a fully deployed personal website — in seconds. Built for businesses that need to create portfolios at scale.
+        </p>
+        <div class="flex flex-wrap gap-4 animate-slide-up delay-300">
+          <a href="https://portfolio.itovio.com" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/30">
+            View Live Demo
+          </a>
+          <a href="https://wa.me/923481383350?text=Hi%2C%20I%27d%20like%20a%20free%20trial%20of%20Precise%20Portfolio" target="_blank" class="border border-white/20 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all">
+            Request Free Trial
+          </a>
+        </div>
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 mt-12 animate-fade-in delay-500">
+          <div class="border border-white/10 rounded-xl p-4 text-center">
+            <p class="text-2xl font-bold text-white">3</p>
+            <p class="text-slate-400 text-xs mt-1">Intake Modes</p>
+          </div>
+          <div class="border border-white/10 rounded-xl p-4 text-center">
+            <p class="text-2xl font-bold text-white">&lt;60s</p>
+            <p class="text-slate-400 text-xs mt-1">Generation Time</p>
+          </div>
+          <div class="border border-white/10 rounded-xl p-4 text-center">
+            <p class="text-2xl font-bold text-white">100%</p>
+            <p class="text-slate-400 text-xs mt-1">White-Label</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Animated chat demo -->
+      <div class="animate-slide-right delay-200">
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-sm animate-float" id="chat-demo-card">
+          <!-- Header -->
+          <div class="flex items-center gap-3 mb-5 pb-4 border-b border-white/10">
+            <div class="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+            </div>
+            <div>
+              <p class="text-white font-semibold text-sm">Precise Portfolio AI</p>
+              <p class="text-green-400 text-xs flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-400 rounded-full inline-block"></span>Online</p>
+            </div>
+          </div>
+          <!-- Messages -->
+          <div class="space-y-3 min-h-[280px]" id="demo-messages">
+            <div class="chat-bubble flex gap-2">
+              <div class="w-7 h-7 bg-indigo-600 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">AI</div>
+              <div class="bg-white/10 text-slate-200 text-sm px-4 py-2.5 rounded-2xl rounded-tl-sm max-w-[80%]">Hi! I'm here to build your portfolio. What's your full name?</div>
+            </div>
+          </div>
+          <!-- Input -->
+          <div class="mt-4 flex gap-2 border-t border-white/10 pt-4">
+            <div class="flex-1 bg-white/10 rounded-xl px-4 py-2.5 text-slate-400 text-sm" id="demo-input-display">Type your answer...</div>
+            <button class="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-24 bg-white">
+  <div class="max-w-screen-2xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">Three Ways In</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900">How It Works</h2>
+      <p class="text-gray-500 mt-4 max-w-xl mx-auto">Users can generate their portfolio through any of three intake modes — the system handles everything else automatically.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal card-hover border border-gray-100 rounded-2xl p-8 text-center">
+        <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">1</div>
+        <h3 class="font-bold text-xl text-gray-900 mb-3">Structured Form</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Fill in name, role, education, work experience, projects, and skills. Clean, guided, and fast — takes under 5 minutes.</p>
+      </div>
+      <div class="reveal card-hover border border-indigo-200 rounded-2xl p-8 text-center bg-indigo-50/30" style="transition-delay:0.15s">
+        <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+        </div>
+        <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">2</div>
+        <h3 class="font-bold text-xl text-gray-900 mb-3">AI Chat Intake</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">An AI chatbot interviews the user conversationally — asking the right questions, extracting all data, and building the portfolio automatically. No form needed.</p>
+        <span class="inline-block mt-3 bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">Most Popular</span>
+      </div>
+      <div class="reveal card-hover border border-gray-100 rounded-2xl p-8 text-center" style="transition-delay:0.3s">
+        <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+        </div>
+        <div class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">3</div>
+        <h3 class="font-bold text-xl text-gray-900 mb-3">Resume Upload</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Upload a PDF resume. The AI parses it instantly — extracting all professional data and generating a complete portfolio site without any manual input.</p>
+      </div>
+    </div>
+    <!-- Arrow flow -->
+    <div class="hidden md:flex items-center justify-center gap-4 mt-12 reveal">
+      <div class="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl px-6 py-3">
+        <span class="text-sm font-medium text-gray-600">Data Collected</span>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="text-sm font-medium text-gray-600">AI Processes</span>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="text-sm font-medium text-indigo-600 font-semibold">Portfolio Live in &lt;60 seconds</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-24 bg-gray-50 dot-grid">
+  <div class="max-w-screen-2xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">What You Get</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Built for Scale. Ready for Business.</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="reveal card-hover bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mb-5"><svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <h3 class="font-bold text-gray-900 mb-2">Instant Generation</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">From data submission to a fully deployed, live portfolio website in under 60 seconds. No developer, no waiting, no manual work.</p>
+      </div>
+      <div class="reveal card-hover bg-white rounded-2xl p-7 border border-gray-100" style="transition-delay:0.1s">
+        <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center mb-5"><svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
+        <h3 class="font-bold text-gray-900 mb-2">White-Label Ready</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Deploy under your own brand. Custom domain, your logo, your colors. Your clients never see "Precise Portfolio" — they see your product.</p>
+      </div>
+      <div class="reveal card-hover bg-white rounded-2xl p-7 border border-gray-100" style="transition-delay:0.2s">
+        <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center mb-5"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+        <h3 class="font-bold text-gray-900 mb-2">High-Volume Scale</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Generate 100 or 10,000 portfolios. The system handles volume without degradation — built for platforms, agencies, and enterprises.</p>
+      </div>
+      <div class="reveal card-hover bg-white rounded-2xl p-7 border border-gray-100" style="transition-delay:0.1s">
+        <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center mb-5"><svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg></div>
+        <h3 class="font-bold text-gray-900 mb-2">AI-Powered Content</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">The AI doesn't just format data — it writes compelling bio text, structures experience sections, and optimizes the portfolio for professional impact.</p>
+      </div>
+      <div class="reveal card-hover bg-white rounded-2xl p-7 border border-gray-100" style="transition-delay:0.2s">
+        <div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center mb-5"><svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+        <h3 class="font-bold text-gray-900 mb-2">Mobile Responsive</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Every generated portfolio is fully responsive — looks perfect on desktop, tablet, and mobile without any additional configuration.</p>
+      </div>
+      <div class="reveal card-hover bg-white rounded-2xl p-7 border border-gray-100" style="transition-delay:0.3s">
+        <div class="w-10 h-10 bg-pink-50 rounded-xl flex items-center justify-center mb-5"><svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <h3 class="font-bold text-gray-900 mb-2">Custom Development</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Need something beyond the standard tool? Precision Tech Insights builds custom portfolio generation systems tailored to your exact workflow and requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="py-24 bg-white">
+  <div class="max-w-screen-2xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">Ideal For</p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">Built for Businesses That Need Portfolios at Scale</h2>
+        <p class="text-gray-600 leading-relaxed mb-8">Precise Portfolio is not a tool for individuals — it is a platform for businesses that need to generate professional portfolio websites for a large audience, consistently and automatically.</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 border border-gray-100 rounded-xl hover:border-indigo-200 hover:bg-indigo-50/20 transition-all">
+            <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+            <div><p class="font-semibold text-gray-900">Staffing &amp; Recruitment Agencies</p><p class="text-gray-500 text-sm mt-1">Generate candidate portfolios instantly for client presentations — no manual formatting required.</p></div>
+          </div>
+          <div class="flex items-start gap-4 p-4 border border-gray-100 rounded-xl hover:border-indigo-200 hover:bg-indigo-50/20 transition-all">
+            <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg></div>
+            <div><p class="font-semibold text-gray-900">Universities &amp; Training Institutes</p><p class="text-gray-500 text-sm mt-1">Create professional portfolios for graduating students or trainees — at batch scale, automatically.</p></div>
+          </div>
+          <div class="flex items-start gap-4 p-4 border border-gray-100 rounded-xl hover:border-indigo-200 hover:bg-indigo-50/20 transition-all">
+            <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg></div>
+            <div><p class="font-semibold text-gray-900">Freelance Marketplaces &amp; HR Platforms</p><p class="text-gray-500 text-sm mt-1">Offer portfolio generation as a value-added service to your users — white-labeled under your brand.</p></div>
+          </div>
+          <div class="flex items-start gap-4 p-4 border border-gray-100 rounded-xl hover:border-indigo-200 hover:bg-indigo-50/20 transition-all">
+            <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+            <div><p class="font-semibold text-gray-900">IT &amp; Digital Services Companies</p><p class="text-gray-500 text-sm mt-1">Like Itovio — use Precise Portfolio to deliver portfolio sites as a service to your own clients.</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- Live usage card -->
+      <div class="reveal" style="transition-delay:0.2s">
+        <div class="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl p-10 text-white">
+          <p class="text-indigo-200 text-xs font-semibold uppercase tracking-widest mb-4">Production Proof</p>
+          <h3 class="text-2xl font-bold mb-4">Used by Itovio in Production</h3>
+          <p class="text-indigo-100 leading-relaxed mb-6">Itovio, an IT services company, uses Precise Portfolio as their primary tool for generating portfolio websites for clients. This is not a demo environment — it is actively serving real users at scale, validating the tool's reliability and output quality.</p>
+          <div class="bg-white/10 rounded-2xl p-5 mb-6">
+            <p class="text-white font-semibold mb-1">portfolio.itovio.com</p>
+            <p class="text-indigo-200 text-sm">Live deployment — generating real portfolios for real clients</p>
+          </div>
+          <a href="https://portfolio.itovio.com" target="_blank" class="inline-flex items-center gap-2 bg-white text-indigo-700 font-semibold px-6 py-3 rounded-xl hover:bg-indigo-50 transition-all">
+            View Live Demo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-screen-2xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600 mb-3">Business Plans</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Rent the Engine</h2>
+      <p class="text-gray-500 mt-4 max-w-xl mx-auto">All plans are rental-based. Free trial available for qualifying businesses. Contact us for current pricing.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="reveal card-hover bg-white rounded-2xl p-8 border border-gray-200">
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Starter</p>
+        <h3 class="text-3xl font-bold text-gray-900 mb-2">100 <span class="text-lg font-normal text-gray-500">sites/mo</span></h3>
+        <p class="text-gray-500 text-sm mb-6">Ideal for small agencies, boutique HR firms, and growing platforms just getting started.</p>
+        <ul class="space-y-3 mb-8 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>All 3 intake modes</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>White-label branding</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Standard support</li>
+        </ul>
+        <a href="https://wa.me/923481383350?text=Hi%2C%20I%27m%20interested%20in%20the%20Starter%20plan%20for%20Precise%20Portfolio" target="_blank" class="block text-center border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white font-semibold py-3 rounded-xl transition-all">Get Pricing</a>
+      </div>
+      <div class="reveal card-hover bg-indigo-600 rounded-2xl p-8 border border-indigo-600 text-white relative" style="transition-delay:0.15s">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-indigo-600 text-xs font-bold px-4 py-1 rounded-full">Best Value</span>
+        <p class="text-xs font-semibold uppercase tracking-widest text-indigo-200 mb-4">Growth</p>
+        <h3 class="text-3xl font-bold text-white mb-2">1,000 <span class="text-lg font-normal text-indigo-200">sites/mo</span></h3>
+        <p class="text-indigo-100 text-sm mb-6">For platforms with high-volume portfolio generation needs — universities, large agencies, marketplaces.</p>
+        <ul class="space-y-3 mb-8 text-sm text-indigo-100">
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>All 3 intake modes</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>White-label branding</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Priority support</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Analytics dashboard</li>
+        </ul>
+        <a href="https://wa.me/923481383350?text=Hi%2C%20I%27m%20interested%20in%20the%20Growth%20plan%20for%20Precise%20Portfolio" target="_blank" class="block text-center bg-white text-indigo-600 hover:bg-indigo-50 font-semibold py-3 rounded-xl transition-all">Get Pricing</a>
+      </div>
+      <div class="reveal card-hover bg-gray-900 rounded-2xl p-8 border border-gray-800 text-white" style="transition-delay:0.3s">
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Enterprise</p>
+        <h3 class="text-3xl font-bold text-white mb-2">Custom <span class="text-lg font-normal text-gray-400">volume</span></h3>
+        <p class="text-gray-400 text-sm mb-6">Unlimited sites, custom integrations, dedicated infrastructure, and full white-label deployment. Custom tool development also available.</p>
+        <ul class="space-y-3 mb-8 text-sm text-gray-400">
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unlimited generation</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom integrations</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dedicated support</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom tool development</li>
+        </ul>
+        <a href="https://wa.me/923481383350?text=Hi%2C%20I%27m%20interested%20in%20Enterprise%20Precise%20Portfolio" target="_blank" class="block text-center border border-white/20 text-white hover:bg-white/10 font-semibold py-3 rounded-xl transition-all">Contact Us</a>
+      </div>
+    </div>
+    <!-- Free trial CTA -->
+    <div class="mt-12 text-center reveal">
+      <div class="inline-flex items-center gap-4 bg-green-50 border border-green-200 rounded-2xl px-8 py-5">
+        <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <div class="text-left">
+          <p class="font-semibold text-gray-900">Free Trial Available</p>
+          <p class="text-gray-500 text-sm">Qualifying businesses can try Precise Portfolio before committing to a plan.</p>
+        </div>
+        <a href="https://wa.me/923481383350?text=Hi%2C%20I%27d%20like%20a%20free%20trial%20of%20Precise%20Portfolio" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-xl transition-all whitespace-nowrap">Request Free Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-gradient-to-br from-slate-900 to-indigo-950 text-white text-center">
+  <div class="max-w-2xl mx-auto px-6 reveal">
+    <h2 class="text-4xl font-bold mb-4">Ready to Generate Portfolios at Scale?</h2>
+    <p class="text-slate-300 mb-8">Contact us on WhatsApp to discuss your requirements, get pricing, or request a free trial.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://wa.me/923481383350?text=Hi%2C%20I%27m%20interested%20in%20Precise%20Portfolio" target="_blank" class="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="https://portfolio.itovio.com" target="_blank" class="border border-white/20 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all">View Live Demo</a>
+      <a href="/contact" class="border border-white/20 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all">Contact Page</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-container"></div>
+
+<script>
+// ── Scroll reveal ──────────────────────────────────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ── Animated chat demo ─────────────────────────────────────────────────────
+const conversation = [
+  { role: 'user', text: 'Muhammad Haris' },
+  { role: 'bot',  text: 'Great! What is your current role or job title?' },
+  { role: 'user', text: 'Full-Stack Developer & CEO' },
+  { role: 'bot',  text: 'Excellent. Tell me about your top project — name and what it does.' },
+  { role: 'user', text: 'Precise Portfolio — AI portfolio generator for businesses' },
+  { role: 'bot',  text: 'Perfect. Generating your portfolio now...' },
+  { role: 'system', text: 'Portfolio generated and deployed in 42 seconds.' },
+];
+
+const demoMessages = document.getElementById('demo-messages');
+const demoInput = document.getElementById('demo-input-display');
+let step = 0;
+
+function typeText(el, text, cb) {
+  el.textContent = '';
+  let i = 0;
+  const interval = setInterval(() => {
+    el.textContent += text[i++];
+    if (i >= text.length) { clearInterval(interval); if (cb) setTimeout(cb, 600); }
+  }, 38);
+}
+
+function addBubble(role, text, cb) {
+  const wrap = document.createElement('div');
+  wrap.className = 'chat-bubble flex gap-2 ' + (role === 'user' ? 'justify-end' : '');
+
+  if (role === 'system') {
+    wrap.innerHTML = `<div class="w-full text-center"><span class="bg-green-500/20 text-green-300 text-xs font-semibold px-4 py-1.5 rounded-full border border-green-500/30">${text}</span></div>`;
+    demoMessages.appendChild(wrap);
+    setTimeout(() => { wrap.classList.add('visible'); if (cb) setTimeout(cb, 1200); }, 50);
+    return;
+  }
+
+  const isBot = role === 'bot';
+  const bubble = document.createElement('div');
+
+  if (isBot) {
+    const av = document.createElement('div');
+    av.className = 'w-7 h-7 bg-indigo-600 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs font-bold';
+    av.textContent = 'AI';
+    wrap.appendChild(av);
+    bubble.className = 'bg-white/10 text-slate-200 text-sm px-4 py-2.5 rounded-2xl rounded-tl-sm max-w-[80%]';
+  } else {
+    bubble.className = 'bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[80%]';
+  }
+
+  wrap.appendChild(bubble);
+  demoMessages.appendChild(wrap);
+  demoMessages.scrollTop = demoMessages.scrollHeight;
+
+  setTimeout(() => {
+    wrap.classList.add('visible');
+    typeText(bubble, text, cb);
+  }, 80);
+}
+
+function runDemo() {
+  if (step >= conversation.length) { step = 0; setTimeout(() => { demoMessages.innerHTML = ''; runDemo(); }, 3000); return; }
+  const item = conversation[step++];
+
+  if (item.role === 'user') {
+    // Show typing in input first
+    typeText(demoInput, item.text, () => {
+      demoInput.textContent = 'Type your answer...';
+      addBubble('user', item.text, () => setTimeout(runDemo, 400));
+    });
+  } else {
+    addBubble(item.role, item.text, () => setTimeout(runDemo, 500));
+  }
+}
+
+// Start demo after hero loads
+setTimeout(runDemo, 1800);
+</script>
+</body>
+</html>

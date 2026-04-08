@@ -1,0 +1,28 @@
+# Server Deployment Commands
+
+# SSH into server
+ssh precisiontech@drh6.hostwhitelabel.com
+
+# Navigate to project directory
+cd ~/domains/precisiontechinsights.com/public_html
+
+# Pull latest code
+git pull origin main
+
+# Stop existing Node processes
+pkill -f "node server.js"
+
+# Install dependencies (if needed)
+npm install --production
+
+# Start server with nohup
+nohup node server.js > server.log 2>&1 &
+
+# Check if running
+ps aux | grep "node server.js"
+
+# View logs
+tail -f server.log
+
+# Or use the deployment script
+./deploy.sh
