@@ -15,7 +15,7 @@
 </style>
 
 <!-- FAB -->
-<button id="pti-fab" onclick="ptiToggle()" style="position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;display:flex;align-items:center;justify-content:center;transition:transform .2s;">
+<button id="pti-fab" style="position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;display:flex;align-items:center;justify-content:center;transition:transform .2s;cursor:pointer;">
   <svg id="pti-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
   <span id="pti-x" style="position:absolute;font-size:20px;opacity:0;transition:opacity .2s;">✕</span>
   <span style="position:absolute;top:3px;right:3px;width:11px;height:11px;border-radius:50%;background:#22c55e;border:2px solid #0f172a;"></span>
@@ -32,7 +32,7 @@
       <div style="color:#fff;font-weight:700;font-size:15px;">Precision Tech AI</div>
       <div style="color:rgba(255,255,255,.7);font-size:11px;display:flex;align-items:center;gap:5px;"><span style="width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Online · Replies instantly</div>
     </div>
-    <button onclick="ptiClose()" style="background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.background='rgba(255,255,255,.25)'" onmouseout="this.style.background='rgba(255,255,255,.15)'">✕</button>
+    <button id="pti-close" style="background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.background='rgba(255,255,255,.25)'" onmouseout="this.style.background='rgba(255,255,255,.15)'">✕</button>
   </div>
 
   <!-- Messages -->
@@ -44,84 +44,19 @@
 
   <!-- Chips -->
   <div style="padding:8px 12px;display:flex;gap:6px;overflow-x:auto;flex-shrink:0;scrollbar-width:none;border-top:1px solid rgba(255,255,255,.06);">
-    <button onclick="ptiQuick('What services do you offer?')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;">Services</button>
-    <button onclick="ptiQuick('Tell me about PrecisePortfolio')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;">PrecisePortfolio</button>
-    <button onclick="ptiQuick('How do I get started?')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;">Get Started</button>
+    <button data-pti-quick="What services do you offer?" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;">Services</button>
+    <button data-pti-quick="Tell me about PrecisePortfolio" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;">PrecisePortfolio</button>
+    <button data-pti-quick="How do I get started?" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;">Get Started</button>
   </div>
 
   <!-- Input -->
   <div style="padding:12px;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0;">
     <div style="display:flex;gap:8px;background:#1e293b;border-radius:12px;padding:8px 12px;border:1px solid rgba(255,255,255,.08);">
-      <input id="pti-input" type="text" placeholder="Ask me anything..." style="flex:1;background:transparent;border:none;outline:none;color:#fff;font-size:13px;" onkeydown="if(event.key==='Enter')ptiSend()">
-      <button onclick="ptiSend()" style="background:linear-gradient(135deg,#667eea,#764ba2);border:none;color:#fff;width:32px;height:32px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <input id="pti-input" type="text" placeholder="Ask me anything..." style="flex:1;background:transparent;border:none;outline:none;color:#fff;font-size:13px;">
+      <button id="pti-send" style="background:linear-gradient(135deg,#667eea,#764ba2);border:none;color:#fff;width:32px;height:32px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
         <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
       </button>
     </div>
   </div>
 </div>
 
-<script>
-var ptiOpen = false;
-var ptiHistory = [];
-
-window.ptiToggle = function(){ ptiOpen ? window.ptiClose() : window.ptiShow(); }
-
-window.ptiShow = function(){
-  ptiOpen = true;
-  document.getElementById('pti-panel').style.display = 'flex';
-  document.getElementById('pti-icon').style.opacity = '0';
-  document.getElementById('pti-x').style.opacity = '1';
-  setTimeout(function(){ document.getElementById('pti-input').focus(); }, 300);
-}
-
-window.ptiClose = function(){
-  ptiOpen = false;
-  document.getElementById('pti-panel').style.display = 'none';
-  document.getElementById('pti-icon').style.opacity = '1';
-  document.getElementById('pti-x').style.opacity = '0';
-}
-
-window.ptiQuick = function(q){ document.getElementById('pti-input').value = q; window.ptiSend(); }
-
-window.ptiSend = async function(){
-  var input = document.getElementById('pti-input');
-  var text = input.value.trim();
-  if(!text) return;
-  input.value = '';
-  ptiAddMsg(text, 'user');
-  ptiHistory.push({role:'user', content:text});
-  ptiTyping();
-  try {
-    var r = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({message:text, conversationHistory:ptiHistory})});
-    var data = await r.json();
-    var t = document.getElementById('pti-typing'); if(t) t.remove();
-    if(data.conversationHistory) ptiHistory = data.conversationHistory;
-    ptiAddMsg(data.response || "Sorry, something went wrong.", 'bot');
-  } catch(e) {
-    var t = document.getElementById('pti-typing'); if(t) t.remove();
-    ptiAddMsg("Connection issue. Please try again!", 'bot');
-  }
-}
-
-function ptiAddMsg(text, role){
-  var msgs = document.getElementById('pti-msgs');
-  var d = document.createElement('div');
-  d.className = 'pti-msg-el';
-  d.style.cssText = role==='user'
-    ? 'background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:12px 14px;border-radius:14px 4px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;'
-    : 'background:#1e293b;color:rgba(255,255,255,.85);padding:12px 14px;border-radius:4px 14px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;';
-  d.textContent = text;
-  msgs.appendChild(d);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-function ptiTyping(){
-  var msgs = document.getElementById('pti-msgs');
-  var d = document.createElement('div');
-  d.id = 'pti-typing';
-  d.style.cssText = 'background:#1e293b;padding:12px 14px;border-radius:4px 14px 14px 14px;display:flex;gap:5px;align-items:center;';
-  d.innerHTML = '<span class="pti-dot"></span><span class="pti-dot"></span><span class="pti-dot"></span>';
-  msgs.appendChild(d);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-</script>
