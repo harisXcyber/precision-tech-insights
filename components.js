@@ -11,17 +11,25 @@
   }
 
   function initNavbar() {
-    // Use event delegation — works even if navbar loads after this runs
-    document.body.addEventListener('click', function(e) {
-      const btn = e.target.closest('#mobileMenuBtn');
-      const arrow = e.target.closest('#solutions-arrow');
+    // Show mobile button only on small screens, hide desktop nav
+    function applyResponsive() {
+      const isMobile = window.innerWidth < 768;
+      const btn = document.getElementById('mobileMenuBtn');
+      const desktopNav = document.querySelector('#main-nav .hidden.md\\:flex') ||
+                         document.querySelector('[class*="md:flex"]');
+      if (btn) btn.style.display = isMobile ? 'block' : 'none';
+    }
+    applyResponsive();
+    window.addEventListener('resize', applyResponsive);
 
-      if (btn) {
+    // Event delegation — works regardless of injection timing
+    document.body.addEventListener('click', function(e) {
+      if (e.target.closest('#mobileMenuBtn')) {
         const mob = document.getElementById('mobileMenu');
-        if (mob) mob.classList.toggle('hidden');
+        if (mob) mob.style.display = mob.style.display === 'none' ? 'block' : 'none';
         return;
       }
-      if (arrow) {
+      if (e.target.closest('#solutions-arrow')) {
         e.stopPropagation();
         const menu = document.getElementById('solutions-menu');
         const chev = document.getElementById('solutions-chevron');
@@ -31,12 +39,10 @@
         }
         return;
       }
-      // Close dropdown on outside click
-      const menu = document.getElementById('solutions-menu');
-      const chev = document.getElementById('solutions-chevron');
-      if (menu && !e.target.closest('#solutions-dropdown-wrap')) {
-        menu.classList.remove('open');
-        if (chev) chev.style.transform = '';
+      if (!e.target.closest('#solutions-dropdown-wrap')) {
+        const menu = document.getElementById('solutions-menu');
+        const chev = document.getElementById('solutions-chevron');
+        if (menu) { menu.classList.remove('open'); if (chev) chev.style.transform = ''; }
       }
     });
 
@@ -45,14 +51,13 @@
       if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.4)' : 'none';
     });
 
-    // Active link — run after short delay to ensure navbar is injected
     setTimeout(() => {
       const path = window.location.pathname;
       const map = {'/':['nav-home','nav-mobile-home'],'/about':['nav-about','nav-mobile-about'],'/contact':['nav-contact','nav-mobile-contact'],'/our-solutions':['nav-solutions','nav-mobile-solutions']};
       Object.keys(map).forEach(p => {
         if (path === p || path === p + '.html') map[p].forEach(id => { const el = document.getElementById(id); if (el) el.classList.add('text-accent','font-semibold'); });
       });
-    }, 300);
+    }, 400);
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -65,6 +70,9 @@
         d.id = 'navbar-container'; d.innerHTML = html;
         document.body.insertBefore(d, document.body.firstChild);
       }
+      // Re-apply responsive after injection
+      const btn = document.getElementById('mobileMenuBtn');
+      if (btn) btn.style.display = window.innerWidth < 768 ? 'block' : 'none';
     }).catch(e => console.warn('navbar failed', e));
 
     fetch('/footer.html').then(r => r.text()).then(html => {
