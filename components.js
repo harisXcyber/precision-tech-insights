@@ -11,18 +11,7 @@
   }
 
   function initNavbar() {
-    // Show mobile button only on small screens, hide desktop nav
-    function applyResponsive() {
-      const isMobile = window.innerWidth < 768;
-      const btn = document.getElementById('mobileMenuBtn');
-      const desktopNav = document.querySelector('#main-nav .hidden.md\\:flex') ||
-                         document.querySelector('[class*="md:flex"]');
-      if (btn) btn.style.display = isMobile ? 'block' : 'none';
-    }
-    applyResponsive();
-    window.addEventListener('resize', applyResponsive);
-
-    // Event delegation — works regardless of injection timing
+    // Event delegation on body — works regardless of injection timing
     document.body.addEventListener('click', function(e) {
       if (e.target.closest('#mobileMenuBtn')) {
         const mob = document.getElementById('mobileMenu');
@@ -33,10 +22,7 @@
         e.stopPropagation();
         const menu = document.getElementById('solutions-menu');
         const chev = document.getElementById('solutions-chevron');
-        if (menu && chev) {
-          const open = menu.classList.toggle('open');
-          chev.style.transform = open ? 'rotate(180deg)' : '';
-        }
+        if (menu) { const open = menu.classList.toggle('open'); if (chev) chev.style.transform = open ? 'rotate(180deg)' : ''; }
         return;
       }
       if (!e.target.closest('#solutions-dropdown-wrap')) {
@@ -45,12 +31,10 @@
         if (menu) { menu.classList.remove('open'); if (chev) chev.style.transform = ''; }
       }
     });
-
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('main-nav');
       if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.4)' : 'none';
     });
-
     setTimeout(() => {
       const path = window.location.pathname;
       const map = {'/':['nav-home','nav-mobile-home'],'/about':['nav-about','nav-mobile-about'],'/contact':['nav-contact','nav-mobile-contact'],'/our-solutions':['nav-solutions','nav-mobile-solutions']};
@@ -70,9 +54,6 @@
         d.id = 'navbar-container'; d.innerHTML = html;
         document.body.insertBefore(d, document.body.firstChild);
       }
-      // Re-apply responsive after injection
-      const btn = document.getElementById('mobileMenuBtn');
-      if (btn) btn.style.display = window.innerWidth < 768 ? 'block' : 'none';
     }).catch(e => console.warn('navbar failed', e));
 
     fetch('/footer.html').then(r => r.text()).then(html => {
