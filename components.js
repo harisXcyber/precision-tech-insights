@@ -11,35 +11,44 @@
   }
 
   function initNavbar() {
-    // Event delegation on body — works regardless of injection timing
+    // Inject responsive CSS into <head> — guaranteed to apply on all browsers
+    const css = document.createElement('style');
+    css.textContent = '@media(max-width:767px){#desktopNav{display:none!important;}#mobileMenuBtn{display:flex!important;}}';
+    document.head.appendChild(css);
+
+    // Dropdown (desktop)
     document.body.addEventListener('click', function(e) {
-      if (e.target.closest('#mobileMenuBtn')) {
-        const mob = document.getElementById('mobileMenu');
-        if (mob) mob.style.display = mob.style.display === 'none' ? 'block' : 'none';
-        return;
-      }
       if (e.target.closest('#solutions-arrow')) {
         e.stopPropagation();
         const menu = document.getElementById('solutions-menu');
         const chev = document.getElementById('solutions-chevron');
-        if (menu) { const open = menu.classList.toggle('open'); if (chev) chev.style.transform = open ? 'rotate(180deg)' : ''; }
+        if (menu) {
+          const open = menu.style.opacity === '1';
+          menu.style.opacity = open ? '0' : '1';
+          menu.style.pointerEvents = open ? 'none' : 'all';
+          menu.style.transform = open ? 'translateY(8px)' : 'translateY(0)';
+          if (chev) chev.style.transform = open ? '' : 'rotate(180deg)';
+        }
         return;
       }
       if (!e.target.closest('#solutions-dropdown-wrap')) {
         const menu = document.getElementById('solutions-menu');
         const chev = document.getElementById('solutions-chevron');
-        if (menu) { menu.classList.remove('open'); if (chev) chev.style.transform = ''; }
+        if (menu) { menu.style.opacity='0'; menu.style.pointerEvents='none'; menu.style.transform='translateY(8px)'; }
+        if (chev) chev.style.transform = '';
       }
     });
+
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('main-nav');
-      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.4)' : 'none';
+      if (nav) nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,0.5)' : 'none';
     });
+
     setTimeout(() => {
       const path = window.location.pathname;
       const map = {'/':['nav-home','nav-mobile-home'],'/about':['nav-about','nav-mobile-about'],'/contact':['nav-contact','nav-mobile-contact'],'/our-solutions':['nav-solutions','nav-mobile-solutions']};
       Object.keys(map).forEach(p => {
-        if (path === p || path === p + '.html') map[p].forEach(id => { const el = document.getElementById(id); if (el) el.classList.add('text-accent','font-semibold'); });
+        if (path === p || path === p + '.html') map[p].forEach(id => { const el = document.getElementById(id); if (el) { el.style.color='#60a5fa'; el.style.fontWeight='600'; } });
       });
     }, 400);
   }
@@ -69,8 +78,14 @@
     fetch('/chatbot.html').then(r => r.text()).then(html => {
       const d = document.createElement('div');
       d.innerHTML = html;
-      document.body.appendChild(d.firstElementChild || d);
-      runScripts(d);
+      const el = d.firstElementChild || d;
+      document.body.appendChild(el);
+      // Re-execute scripts inside the appended element
+      el.querySelectorAll('script').forEach(old => {
+        const s = document.createElement('script');
+        s.textContent = old.textContent;
+        old.replaceWith(s);
+      });
     }).catch(e => console.warn('chatbot failed', e));
   });
 })();
