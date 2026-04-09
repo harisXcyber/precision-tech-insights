@@ -1,59 +1,39 @@
 /**
  * components.js — shared layout loader for Precision Tech Insights
- * Injects navbar, footer, and AI chatbot into every page automatically.
- * To update header/footer/chatbot: edit navbar.html, footer.html, or chatbot.html only.
  */
 (function () {
-  function inject(url, containerId, append = false) {
-    return fetch(url)
-      .then(r => r.text())
-      .then(html => {
-        if (append) {
-          const div = document.createElement('div');
-          div.innerHTML = html;
-          document.body.appendChild(div.firstElementChild || div);
-        } else {
-          const el = document.getElementById(containerId);
-          if (el) el.innerHTML = html;
-        }
-      })
-      .catch(e => console.warn('Component load failed:', url, e));
+  function injectHTML(html, container, prepend) {
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    if (container) {
+      container.innerHTML = '';
+      container.appendChild(div.firstElementChild || div);
+    } else if (prepend) {
+      document.body.insertBefore(div, document.body.firstChild);
+    } else {
+      document.body.appendChild(div);
+    }
+    // Re-execute any <script> tags (innerHTML doesn't run them)
+    (container || div).querySelectorAll('script').forEach(old => {
+      const s = document.createElement('script');
+      if (old.src) s.src = old.src; else s.textContent = old.textContent;
+      document.head.appendChild(s);
+    });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Navbar — inject into #navbar-container if present, else prepend to body
-    const navContainer = document.getElementById('navbar-container');
-    if (navContainer) {
-      inject('/navbar.html', 'navbar-container');
-    } else {
-      fetch('/navbar.html').then(r => r.text()).then(html => {
-        const div = document.createElement('div');
-        div.id = 'navbar-container';
-        div.innerHTML = html;
-        document.body.insertBefore(div, document.body.firstChild);
-      });
-    }
+    fetch('/navbar.html').then(r => r.text()).then(html => {
+      injectHTML(html, document.getElementById('navbar-container'), true);
+    }).catch(e => console.warn('navbar load failed', e));
 
-    // Footer — inject into #footer-container if present, else append to body
-    const footerContainer = document.getElementById('footer-container');
-    if (footerContainer) {
-      inject('/footer.html', 'footer-container');
-    } else {
-      fetch('/footer.html').then(r => r.text()).then(html => {
-        const div = document.createElement('div');
-        div.id = 'footer-container';
-        div.innerHTML = html;
-        document.body.appendChild(div);
-      });
-    }
+    fetch('/footer.html').then(r => r.text()).then(html => {
+      injectHTML(html, document.getElementById('footer-container'), false);
+    }).catch(e => console.warn('footer load failed', e));
 
-    // Chatbot — always append, remove any existing inline chatbot first
     const existing = document.getElementById('chatbot-container');
     if (existing) existing.remove();
     fetch('/chatbot.html').then(r => r.text()).then(html => {
-      const div = document.createElement('div');
-      div.innerHTML = html;
-      document.body.appendChild(div.firstElementChild || div);
-    });
+      injectHTML(html, null, false);
+    }).catch(e => console.warn('chatbot load failed', e));
   });
 })();
