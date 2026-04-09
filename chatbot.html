@@ -1,86 +1,162 @@
-<div id="chatbot-container" style="position:fixed;bottom:28px;right:28px;z-index:9999;">
-    <button id="chat-toggle" style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(102,126,234,0.4);transition:transform 0.3s;border:none;cursor:pointer;font-size:22px;">
-        💬
-    </button>
-    <div id="chat-window" style="display:none;position:absolute;bottom:70px;right:0;width:350px;height:500px;background:white;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,0.2);flex-direction:column;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:16px;display:flex;justify-content:space-between;align-items:center;">
-            <div>
-                <div style="font-weight:600;font-size:16px;">Precision Tech AI</div>
-                <div style="font-size:12px;opacity:0.9;">Ask me anything!</div>
-            </div>
-            <button id="chat-close" style="background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;">✕</button>
+<style>
+@keyframes pti-fab-pulse{0%,100%{box-shadow:0 0 0 0 rgba(102,126,234,.5),0 8px 32px rgba(102,126,234,.4);}70%{box-shadow:0 0 0 12px rgba(102,126,234,0),0 8px 32px rgba(102,126,234,.4);}}
+@keyframes pti-slide-up{from{opacity:0;transform:translateY(20px) scale(.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+@keyframes pti-slide-down{from{opacity:1;transform:translateY(0) scale(1);}to{opacity:0;transform:translateY(20px) scale(.95);}}
+@keyframes pti-msg-in{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pti-dot{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-6px);opacity:1;}}
+#pti-fab{animation:pti-fab-pulse 2.5s infinite;}
+#pti-fab:hover{transform:scale(1.1)!important;}
+#pti-window.open{animation:pti-slide-up .3s cubic-bezier(.34,1.56,.64,1) forwards;}
+#pti-window.closing{animation:pti-slide-down .2s ease forwards;}
+.pti-msg{animation:pti-msg-in .25s ease forwards;}
+.pti-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#667eea;animation:pti-dot 1.2s infinite;}
+.pti-dot:nth-child(2){animation-delay:.15s;}
+.pti-dot:nth-child(3){animation-delay:.3s;}
+</style>
+
+<div id="chatbot-container" style="position:fixed;bottom:28px;right:28px;z-index:9999;font-family:'Exo 2',system-ui,sans-serif;">
+  <!-- FAB -->
+  <button id="pti-fab" style="width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;transition:transform .2s;position:relative;">
+    <svg id="pti-fab-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transition:all .3s;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+    <span id="pti-fab-close" style="position:absolute;font-size:18px;opacity:0;transition:opacity .2s;">✕</span>
+    <!-- Notification dot -->
+    <span style="position:absolute;top:2px;right:2px;width:12px;height:12px;border-radius:50%;background:#22c55e;border:2px solid #fff;"></span>
+  </button>
+
+  <!-- Chat window -->
+  <div id="pti-window" style="display:none;position:absolute;bottom:70px;right:0;width:340px;height:520px;background:#0f172a;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(102,126,234,.2);flex-direction:column;overflow:hidden;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#667eea,#764ba2);padding:16px 18px;display:flex;align-items:center;gap:12px;flex-shrink:0;">
+      <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="20" height="20" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      </div>
+      <div style="flex:1;">
+        <div style="color:#fff;font-weight:700;font-size:15px;">Precision Tech AI</div>
+        <div style="color:rgba(255,255,255,.7);font-size:11px;display:flex;align-items:center;gap:5px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;"></span>
+          Online · Replies instantly
         </div>
-        <div id="chat-messages" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:#f8f9fa;">
-            <div style="background:#e9ecef;padding:12px;border-radius:12px;font-size:14px;">
-                👋 Hi! I'm the Precision Tech AI assistant. Ask me about our services, projects, or how we can help you!
-            </div>
-        </div>
-        <div style="padding:16px;border-top:1px solid #e9ecef;background:white;">
-            <form id="chat-form" style="display:flex;gap:8px;">
-                <input type="text" id="chat-input" placeholder="Type your message..." style="flex:1;padding:10px 14px;border:1px solid #dee2e6;border-radius:8px;font-size:14px;" required>
-                <button type="submit" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;border:none;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:600;">Send</button>
-            </form>
-        </div>
+      </div>
+      <button id="pti-close" style="background:rgba(255,255,255,.15);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.25)'" onmouseout="this.style.background='rgba(255,255,255,.15)'">✕</button>
     </div>
+
+    <!-- Messages -->
+    <div id="pti-msgs" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:#334155 transparent;">
+      <div class="pti-msg" style="background:#1e293b;padding:12px 14px;border-radius:4px 14px 14px 14px;font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;max-width:85%;">
+        Hi! I'm the Precision Tech AI. Ask me about our services, products, or how we can help your business.
+      </div>
+    </div>
+
+    <!-- Quick chips -->
+    <div id="pti-chips" style="padding:8px 12px;display:flex;gap:6px;overflow-x:auto;flex-shrink:0;scrollbar-width:none;">
+      <button onclick="ptiQuick('What services do you offer?')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;transition:all .2s;" onmouseover="this.style.background='rgba(102,126,234,.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.7)'">Services</button>
+      <button onclick="ptiQuick('Tell me about PrecisePortfolio')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;transition:all .2s;" onmouseover="this.style.background='rgba(102,126,234,.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.7)'">PrecisePortfolio</button>
+      <button onclick="ptiQuick('How do I get started?')" style="padding:5px 12px;border-radius:20px;border:1px solid rgba(102,126,234,.4);background:transparent;color:rgba(255,255,255,.7);font-size:11px;white-space:nowrap;cursor:pointer;transition:all .2s;" onmouseover="this.style.background='rgba(102,126,234,.2)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.7)'">Get Started</button>
+    </div>
+
+    <!-- Input -->
+    <div style="padding:12px;border-top:1px solid rgba(255,255,255,.06);background:#0f172a;flex-shrink:0;">
+      <div style="display:flex;gap:8px;background:#1e293b;border-radius:12px;padding:8px 12px;border:1px solid rgba(255,255,255,.08);transition:border-color .2s;" id="pti-input-wrap">
+        <input id="pti-input" type="text" placeholder="Ask me anything..." style="flex:1;background:transparent;border:none;outline:none;color:#fff;font-size:13px;font-family:inherit;" onfocus="document.getElementById('pti-input-wrap').style.borderColor='rgba(102,126,234,.5)'" onblur="document.getElementById('pti-input-wrap').style.borderColor='rgba(255,255,255,.08)'">
+        <button id="pti-send" style="background:linear-gradient(135deg,#667eea,#764ba2);border:none;color:#fff;width:32px;height:32px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .2s;opacity:.4;" disabled>
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
-(function() {
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatWindow = document.getElementById('chat-window');
-    const chatClose  = document.getElementById('chat-close');
-    const chatForm   = document.getElementById('chat-form');
-    const chatInput  = document.getElementById('chat-input');
-    const chatMessages = document.getElementById('chat-messages');
-    let conversationHistory = [];
+(function(){
+  var fab = document.getElementById('pti-fab');
+  var win = document.getElementById('pti-window');
+  var closeBtn = document.getElementById('pti-close');
+  var msgs = document.getElementById('pti-msgs');
+  var input = document.getElementById('pti-input');
+  var send = document.getElementById('pti-send');
+  var fabIcon = document.getElementById('pti-fab-icon');
+  var fabClose = document.getElementById('pti-fab-close');
+  var history = [];
+  var open = false;
 
-    chatToggle.addEventListener('click', () => {
-        chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
-    });
-    chatClose.addEventListener('click', () => { chatWindow.style.display = 'none'; });
+  function openChat(){
+    open = true;
+    win.style.display = 'flex';
+    win.classList.remove('closing');
+    win.classList.add('open');
+    fabIcon.style.opacity = '0';
+    fabClose.style.opacity = '1';
+    setTimeout(function(){ input.focus(); }, 300);
+  }
+  function closeChat(){
+    open = false;
+    win.classList.remove('open');
+    win.classList.add('closing');
+    fabIcon.style.opacity = '1';
+    fabClose.style.opacity = '0';
+    setTimeout(function(){ win.style.display = 'none'; win.classList.remove('closing'); }, 200);
+  }
 
-    chatForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const message = chatInput.value.trim();
-        if (!message) return;
+  fab.addEventListener('click', function(){ open ? closeChat() : openChat(); });
+  closeBtn.addEventListener('click', closeChat);
 
-        const userMsg = document.createElement('div');
-        userMsg.style.cssText = 'background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:12px;border-radius:12px;font-size:14px;align-self:flex-end;max-width:80%;';
-        userMsg.textContent = message;
-        chatMessages.appendChild(userMsg);
-        chatInput.value = '';
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+  input.addEventListener('input', function(){
+    send.disabled = !input.value.trim();
+    send.style.opacity = input.value.trim() ? '1' : '.4';
+  });
+  input.addEventListener('keydown', function(e){ if(e.key==='Enter' && !send.disabled) doSend(); });
+  send.addEventListener('click', doSend);
 
-        const typing = document.createElement('div');
-        typing.id = 'typing-indicator';
-        typing.style.cssText = 'background:#e9ecef;padding:12px;border-radius:12px;font-size:14px;';
-        typing.textContent = 'Typing...';
-        chatMessages.appendChild(typing);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+  function addMsg(text, role){
+    var d = document.createElement('div');
+    d.className = 'pti-msg';
+    if(role === 'user'){
+      d.style.cssText = 'background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:12px 14px;border-radius:14px 4px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;';
+    } else {
+      d.style.cssText = 'background:#1e293b;color:rgba(255,255,255,.85);padding:12px 14px;border-radius:4px 14px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;';
+    }
+    d.textContent = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+    return d;
+  }
 
-        try {
-            const response = await fetch('/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message, conversationHistory })
-            });
-            const data = await response.json();
-            typing.remove();
-            if (data.success) {
-                conversationHistory = data.conversationHistory || conversationHistory;
-                const botMsg = document.createElement('div');
-                botMsg.style.cssText = 'background:#e9ecef;padding:12px;border-radius:12px;font-size:14px;max-width:80%;';
-                botMsg.textContent = data.response;
-                chatMessages.appendChild(botMsg);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-        } catch (err) {
-            typing.remove();
-            const errMsg = document.createElement('div');
-            errMsg.style.cssText = 'background:#fee2e2;padding:12px;border-radius:12px;font-size:14px;';
-            errMsg.textContent = 'Sorry, something went wrong. Please try again.';
-            chatMessages.appendChild(errMsg);
-        }
-    });
+  function showTyping(){
+    var d = document.createElement('div');
+    d.id = 'pti-typing';
+    d.style.cssText = 'background:#1e293b;padding:12px 14px;border-radius:4px 14px 14px 14px;display:flex;gap:5px;align-items:center;';
+    d.innerHTML = '<span class="pti-dot"></span><span class="pti-dot"></span><span class="pti-dot"></span>';
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function removeTyping(){ var t=document.getElementById('pti-typing'); if(t) t.remove(); }
+
+  async function doSend(){
+    var text = input.value.trim();
+    if(!text) return;
+    input.value = '';
+    send.disabled = true; send.style.opacity = '.4';
+    addMsg(text, 'user');
+    history.push({role:'user', content:text});
+    showTyping();
+    try {
+      var r = await fetch('/api/chat', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({message:text, conversationHistory:history})
+      });
+      var data = await r.json();
+      removeTyping();
+      var reply = data.response || "Sorry, I couldn't process that. Please try again.";
+      if(data.conversationHistory) history = data.conversationHistory;
+      addMsg(reply, 'bot');
+    } catch(e) {
+      removeTyping();
+      addMsg("Connection issue. Please try again!", 'bot');
+    }
+  }
+
+  window.ptiQuick = function(q){ input.value = q; send.disabled=false; send.style.opacity='1'; doSend(); };
 })();
 </script>
