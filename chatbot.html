@@ -64,33 +64,52 @@
 var ptiOpen = false;
 var ptiHistory = [];
 
-function ptiToggle(){ ptiOpen ? ptiClose() : ptiShow(); }
+window.ptiToggle = function(){ ptiOpen ? window.ptiClose() : window.ptiShow(); }
 
-function ptiShow(){
+window.ptiShow = function(){
   ptiOpen = true;
-  var p = document.getElementById('pti-panel');
-  p.style.display = 'flex';
+  document.getElementById('pti-panel').style.display = 'flex';
   document.getElementById('pti-icon').style.opacity = '0';
   document.getElementById('pti-x').style.opacity = '1';
   setTimeout(function(){ document.getElementById('pti-input').focus(); }, 300);
 }
 
-function ptiClose(){
+window.ptiClose = function(){
   ptiOpen = false;
   document.getElementById('pti-panel').style.display = 'none';
   document.getElementById('pti-icon').style.opacity = '1';
   document.getElementById('pti-x').style.opacity = '0';
 }
 
+window.ptiQuick = function(q){ document.getElementById('pti-input').value = q; window.ptiSend(); }
+
+window.ptiSend = async function(){
+  var input = document.getElementById('pti-input');
+  var text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  ptiAddMsg(text, 'user');
+  ptiHistory.push({role:'user', content:text});
+  ptiTyping();
+  try {
+    var r = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({message:text, conversationHistory:ptiHistory})});
+    var data = await r.json();
+    var t = document.getElementById('pti-typing'); if(t) t.remove();
+    if(data.conversationHistory) ptiHistory = data.conversationHistory;
+    ptiAddMsg(data.response || "Sorry, something went wrong.", 'bot');
+  } catch(e) {
+    var t = document.getElementById('pti-typing'); if(t) t.remove();
+    ptiAddMsg("Connection issue. Please try again!", 'bot');
+  }
+}
+
 function ptiAddMsg(text, role){
   var msgs = document.getElementById('pti-msgs');
   var d = document.createElement('div');
   d.className = 'pti-msg-el';
-  if(role === 'user'){
-    d.style.cssText = 'background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:12px 14px;border-radius:14px 4px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;';
-  } else {
-    d.style.cssText = 'background:#1e293b;color:rgba(255,255,255,.85);padding:12px 14px;border-radius:4px 14px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;';
-  }
+  d.style.cssText = role==='user'
+    ? 'background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:12px 14px;border-radius:14px 4px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;'
+    : 'background:#1e293b;color:rgba(255,255,255,.85);padding:12px 14px;border-radius:4px 14px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;';
   d.textContent = text;
   msgs.appendChild(d);
   msgs.scrollTop = msgs.scrollHeight;
@@ -105,27 +124,4 @@ function ptiTyping(){
   msgs.appendChild(d);
   msgs.scrollTop = msgs.scrollHeight;
 }
-
-async function ptiSend(){
-  var input = document.getElementById('pti-input');
-  var text = input.value.trim();
-  if(!text) return;
-  input.value = '';
-  ptiAddMsg(text, 'user');
-  ptiHistory.push({role:'user', content:text});
-  ptiTyping();
-  try {
-    var r = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({message:text, conversationHistory:ptiHistory})});
-    var data = await r.json();
-    var t = document.getElementById('pti-typing'); if(t) t.remove();
-    var reply = data.response || "Sorry, something went wrong.";
-    if(data.conversationHistory) ptiHistory = data.conversationHistory;
-    ptiAddMsg(reply, 'bot');
-  } catch(e) {
-    var t = document.getElementById('pti-typing'); if(t) t.remove();
-    ptiAddMsg("Connection issue. Please try again!", 'bot');
-  }
-}
-
-function ptiQuick(q){ document.getElementById('pti-input').value = q; ptiSend(); }
 </script>
