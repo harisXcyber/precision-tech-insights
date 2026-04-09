@@ -78,10 +78,10 @@
     fetch('/chatbot.html').then(r => r.text()).then(html => {
       const d = document.createElement('div');
       d.innerHTML = html;
-      const el = d.firstElementChild || d;
-      document.body.appendChild(el);
-      // Re-execute scripts inside the appended element
-      el.querySelectorAll('script').forEach(old => {
+      // Append all children (style + div + script)
+      while (d.firstChild) document.body.appendChild(d.firstChild);
+      // Re-execute scripts
+      document.getElementById('chatbot-container')?.querySelectorAll('script').forEach(old => {
         const s = document.createElement('script');
         s.textContent = old.textContent;
         old.replaceWith(s);
