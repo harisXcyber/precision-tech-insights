@@ -34,8 +34,8 @@
       var d = document.createElement('div');
       d.className = 'pti-msg-el';
       d.style.cssText = role === 'user'
-        ? 'background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:12px 14px;border-radius:14px 4px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;'
-        : 'background:#1e293b;color:rgba(255,255,255,.85);padding:12px 14px;border-radius:4px 14px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;';
+        ? 'background:linear-gradient(135deg,#3b82f6,#6366f1);color:#fff;padding:12px 14px;border-radius:14px 4px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;align-self:flex-end;'
+        : 'background:#fff;color:#374151;padding:12px 14px;border-radius:4px 14px 14px 14px;font-size:13px;line-height:1.6;max-width:85%;box-shadow:0 1px 3px rgba(0,0,0,.08);border:1px solid #e5e7eb;';
       d.textContent = text;
       msgs.appendChild(d);
       msgs.scrollTop = msgs.scrollHeight;
@@ -43,7 +43,7 @@
     function showTyping() {
       var d = document.createElement('div');
       d.id = 'pti-typing';
-      d.style.cssText = 'background:#1e293b;padding:12px 14px;border-radius:4px 14px 14px 14px;display:flex;gap:5px;align-items:center;';
+      d.style.cssText = 'background:#f1f5f9;padding:12px 14px;border-radius:4px 14px 14px 14px;display:flex;gap:5px;align-items:center;';
       d.innerHTML = '<span class="pti-dot"></span><span class="pti-dot"></span><span class="pti-dot"></span>';
       msgs.appendChild(d);
       msgs.scrollTop = msgs.scrollHeight;
