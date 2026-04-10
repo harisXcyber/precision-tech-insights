@@ -103,7 +103,7 @@
     }, 400);
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function run() {
     initNavbar(); // Set up delegation immediately — no need to wait for injection
 
     fetch('/navbar.html').then(r => r.text()).then(html => {
@@ -132,5 +132,12 @@
       // Init chatbot after DOM is ready
       initChatbot();
     }).catch(e => console.warn('chatbot failed', e));
-  });
+  }
+
+  // Run immediately if DOM ready, otherwise wait
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
 })();
